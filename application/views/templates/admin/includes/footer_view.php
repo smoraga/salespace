@@ -1,4 +1,4 @@
-<script type="text/javascript" src="<?php echo base_url()?>assets/js/global.js"></script>
+<script type="text/javascript" src="<?php echo base_url()?>assets/js/plugins/global.js"></script>
 
 <script type="text/javascript" src="<?php echo base_url('assets/js/bootstrap.min.js')?>"></script>
 <script type="text/javascript" class="include" src="<?php echo base_url('assets/js/plugins/jquery.dcjqaccordion.2.7.js')?>"></script>
