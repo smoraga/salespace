@@ -8,15 +8,16 @@
           <form class="form-signin" action="">
             <h2 class="form-signin-heading">sign in now</h2>
             <div class="login-wrap">
-                <input type="text" class="form-control" placeholder="User ID" autofocus>
-                <input type="password" class="form-control" placeholder="Password">
+                <input type="text" name="username" class="form-control" placeholder="User ID" autofocus>
+                <input type="password" name="password" class="form-control" placeholder="Password">
                 <label class="checkbox">
                     <input type="checkbox" value="remember-me"> Remember me
                     <span class="pull-right">
                         <a data-toggle="modal" href="#myModal"> Forgot Password?</a>
                     </span>
                 </label>
-                <button class="btn btn-lg btn-login btn-block" type="submit">Sign in</button>
+                <input type="submit" name="submit" value="Sign in" class="btn btn-lg btn-login btn-block"/>
+                <!--<button class="btn btn-lg btn-login btn-block" type="submit">Sign in</button>-->
                 <p>or you can sign in via social network</p>
                 <div class="login-social-link">
                     <a href="javascript:void(0)" class="facebook">
@@ -65,4 +66,34 @@
     </div>
 </div>
 <footer><?php $this->load->view('templates/admin/includes/footer_page_view')?></footer>
+<script type="text/javascript">
+$(function() {
+    $('input[type="submit"]').click(function() {
+        $('*').removeClass('error error-succes');
+        $('*').remove('.error-msg');
+        
+        if($(username).val() === '') {
+            username.addClass('error');
+            username.after('<p class="error-msg">Please fill the required field</p>');
+            error = 1;
+        } else {
+            username.addClass('error-succes');
+        }
+        
+        if($(password).val() === '') {
+            password.addClass('error');
+            password.after('<p class="error-msg">Please fill the required field</p>');
+            error = 1;
+        } else {
+            password.addClass('error-succes');
+        }
+        
+        if(error === 0) {
+            $(this).submit();
+        } else {
+            return false;
+        }
+    }); 
+});
+</script>
 <?php $this->load->view('templates/admin/includes/footer_view')?>

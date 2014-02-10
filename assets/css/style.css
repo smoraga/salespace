@@ -77,7 +77,9 @@ ul.sidebar-menu li a.active i { color: #FF6C60; }
 /* ==============
 	Helper 
 	========== */
-.error {border:1px solid #ff0000;}
+.error {border:1px solid #ff0000 !important;}
+.error-msg {font-size:1em !important; color:#ff0000 !important;}
+.error-succes {border: 1px solid #468847 !important;}
 .clr {clear:both; float:none;}
 .fl {float:left;}
 .fr {float:right;}
@@ -116,11 +118,7 @@ ul.sidebar-menu li a.active i { color: #FF6C60; }
 /*notification*/
 #top_menu .nav > li, ul.top-menu > li { float: left; }
 
-.notify-row {
-    float: left;
-    margin-top: 15px;
-    margin-left: 92px;
-}
+.notify-row { float: left; margin-top: 15px; margin-left: 92px; }
 
 ul.top-menu > li > a {
     color: #666666;
