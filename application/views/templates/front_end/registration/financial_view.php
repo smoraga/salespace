@@ -7,7 +7,7 @@
         <div class="container">
             <h1>Financial Information</h1>
             
-            <form action="" method="">
+            <form id="reg_financial_form">
                 <label>Tin Number</label>
                 <input type="text" name="tin" value="" />
                 <div class="clr"></div>
@@ -59,10 +59,26 @@ $(function() {
         });
        
         if(error === 0) {
-            alert('Success');
-        } else {
-            return false;
+            $.ajax({
+                url: "<?php echo base_url(); ?>registration/process_financial_information",
+                type: "POST",
+                data: $("#reg_financial_form").serialize(),
+                success: function(response){
+                    var resp = jQuery.parseJSON(response);
+                    if(resp.success === true) {
+                        window.location.href = resp.redirect_url;
+                    } else {
+                        alert(resp.success);
+                        alert(resp.errors.username);
+                        alert(resp.errors.password);
+                    }
+                },
+                error: function(jqXHR, textStatus, errorThrown){
+                    alert('error');
+                }
+            });
         }
+        return false;
    }); 
 });
 </script>

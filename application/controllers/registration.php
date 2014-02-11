@@ -72,7 +72,7 @@ class Registration extends CI_Controller {
         echo json_encode($data);
     }
     
-    public function process_billing_address()
+    public function process_billing_information()
     {
         $this->load->helper(array('form'));
         $this->load->library('form_validation');
@@ -118,6 +118,49 @@ class Registration extends CI_Controller {
         echo json_encode($data);
     }
     
+    public function process_financial_information()
+    {
+        $this->load->helper(array('form'));
+        $this->load->library('form_validation');
+
+        $this->form_validation->set_rules('tin', 'Tin', 'required');
+        $this->form_validation->set_rules('company', 'Company', 'required');
+        $this->form_validation->set_rules('company_address', 'Company Address', 'required');
+        $this->form_validation->set_rules('company_phone', 'Company phone', 'required|numeric');
+        $this->form_validation->set_rules('company_fax', 'Company Fax', 'required|numeric');
+        $this->form_validation->set_rules('sec_number', 'Sec Number', 'required');
+        
+        $posts = $this->input->post();
+        $data['success'] = FALSE;
+        
+        if($posts) { 
+          if ($this->form_validation->run() == FALSE) {
+            $data['errors'] = array(
+                'tin'               => form_error('tin', ' ', ' '),
+                'company'           => form_error('company', ' ', ' '),
+                'company_address'   => form_error('company_address', ' ', ' '),
+                'company_phone'     => form_error('company_phone', ' ', ' '),
+                'company_fax'       => form_error('company_fax', ' ', ' '),
+                'sec_number'        => form_error('sec_number', ' ', ' '),
+            );          
+          } else {
+            $data['success'] = TRUE;
+            $data['redirect_url'] = base_url().'registration/financial';
+            
+            $financial_info = array(
+                                    'company'   => $this->input->post('tin', TRUE),
+                                    'address'   => $this->input->post('company', TRUE),
+                                    'country'   => $this->input->post('company_address', TRUE),
+                                    'city'      => $this->input->post('company_phone', TRUE),
+                                    'zip'       => $this->input->post('company_fax', TRUE),
+                                    'phone'     => $this->input->post('sec_number', TRUE)
+            );
+            $this->_parse_session_info($financial_info, 'financial_info');
+          }
+        }
+        echo json_encode($data);
+    }
+    
     private function _parse_session_info($array_info, $array_key)
     {
         $curr_session_data = $this->session->userdata('credentials');
@@ -130,5 +173,11 @@ class Registration extends CI_Controller {
         } else {
             return FALSE;
         }
+    }
+    
+    public function get_session()
+    {
+        $a = $this->session->userdata('credentials');
+        print_r($a);
     }
 }

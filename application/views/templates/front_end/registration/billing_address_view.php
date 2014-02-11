@@ -79,7 +79,7 @@ $(function() {
         
         if(error == 0) {
             $.ajax({
-                url: "<?php echo base_url(); ?>registration/process_billing_address",
+                url: "<?php echo base_url(); ?>registration/process_billing_information",
                 type: "POST",
                 data: $("#reg_billing_form").serialize(),
                 success: function(response){
