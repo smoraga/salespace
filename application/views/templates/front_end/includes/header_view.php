@@ -4,20 +4,15 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>Salespace - Admin</title>
+    <title>Salespace - Front-end</title>
 
     <!-- Bootstrap core CSS -->
     <link href="<?php echo base_url('assets/css/bootstrap.min.css')?>" rel="stylesheet">
     <link href="<?php echo base_url('assets/css/bootstrap-reset.css')?>" rel="stylesheet">
-	
-    <!--external css-->
-    <link rel="stylesheet" href="<?php echo base_url('assets/admin/font-awesome/css/font-awesome.css')?>" />
-    <link rel="stylesheet" type="text/css" href="<?php echo base_url('assets/admin/js/plugins/jquery-easy-pie-chart/jquery.easy-pie-chart.css')?>" media="screen"/>
-    <link rel="stylesheet" type="text/css" href="<?php echo base_url('assets/admin/css/owl.carousel.css')?>" />
  
 	<!-- Custom styles for this template -->
-    <link href="<?php echo base_url('assets/admin/css/style.css')?>" rel="stylesheet">
-    <link href="<?php echo base_url('assets/admin/css/style-responsive.css')?>" rel="stylesheet" />
+    <link href="<?php echo base_url('assets/front_end/css/style.css')?>" rel="stylesheet">
+    <link href="<?php echo base_url('assets/front_end/css/style-responsive.css')?>" rel="stylesheet" />
 
     <!-- HTML5 shim and Respond.js IE8 support of HTML5 tooltipss and media queries -->
     <!--[if lt IE 9]>

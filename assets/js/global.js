@@ -13,6 +13,7 @@ var inputText   = $('input[type="text"]'),
     countries   = $('select[name="country"]'),
     zip         = $('input[name="zip"]'),
     fax         = $('input[name="fax"]'),
+    company     = $('input[name="company"]'),
     error       = 0;
 
 /*  

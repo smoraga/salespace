@@ -166,7 +166,7 @@
                                 <div id="reviews" class="tab-pane">
                                     <article class="media">
                                         <a class="pull-left thumb p-thumb">
-                                            <img src="img/avatar-mini.jpg">
+                                            <img src="<?php echo base_url('assets/admin/img/avatar-mini.jpg')?>">
                                         </a>
                                         <div class="media-body">
                                             <a href="#" class="cmt-head">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</a>
@@ -175,7 +175,7 @@
                                     </article>
                                     <article class="media">
                                         <a class="pull-left thumb p-thumb">
-                                            <img src="img/avatar-mini2.jpg">
+                                            <img src="<?php echo base_url('assets/admin/img/avatar-mini2.jpg')?>">
                                         </a>
                                         <div class="media-body">
                                             <a href="#" class="cmt-head">Nulla vel metus scelerisque ante sollicitudin commodo</a>
@@ -184,7 +184,7 @@
                                     </article>
                                     <article class="media">
                                         <a class="pull-left thumb p-thumb">
-                                            <img src="img/avatar-mini3.jpg">
+                                            <img src="<?php echo base_url('assets/admin/img/avatar-mini3.jpg')?>">
                                         </a>
                                         <div class="media-body">
                                             <a href="#" class="cmt-head">Donec lacinia congue felis in faucibus. </a>
@@ -200,7 +200,7 @@
                         <div class="col-md-4">
                             <section class="panel">
                                 <div class="pro-img-box">
-                                    <img src="img/product-list/pro-1.jpg" alt=""/>
+                                    <img src="<?php echo base_url('assets/admin/img/product-list/pro-1.jpg')?>" alt=""/>
                                     <a href="#" class="adtocart">
                                         <i class="icon-shopping-cart"></i>
                                     </a>
@@ -219,7 +219,7 @@
                         <div class="col-md-4">
                             <section class="panel">
                                 <div class="pro-img-box">
-                                    <img src="img/product-list/pro1.jpg" alt=""/>
+                                    <img src="<?php echo base_url('assets/admin/img/product-list/pro1.jpg')?>" alt=""/>
                                     <a href="#" class="adtocart">
                                         <i class="icon-shopping-cart"></i>
                                     </a>
@@ -238,7 +238,7 @@
                         <div class="col-md-4">
                             <section class="panel">
                                 <div class="pro-img-box">
-                                    <img src="img/product-list/pro2.jpg" alt=""/>
+                                    <img src="<?php echo base_url('assets/admin/img/product-list/pro2.jpg')?>" alt=""/>
                                     <a href="#" class="adtocart">
                                         <i class="icon-shopping-cart"></i>
                                     </a>

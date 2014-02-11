@@ -1,8 +1,8 @@
-<?php $this->load->view('templates/admin/includes/header_view')?>
+<?php $this->load->view('templates/front_end/includes/header_view')?>
 </head>
 <body>
 <div id="main-container">
-    <header><?php $this->load->view('templates/admin/includes/header_page_view')?></header>
+    <header><?php $this->load->view('templates/front_end/includes/header_page_view')?></header>
     <div id="main-wrapper">
         <h1>Billing Information</h1>
         <form action="" method="">
@@ -15,11 +15,8 @@
             <div class="clr"></div>
             
             <label>Country</label>
-            <select name="country">
-                <option>- Select -</option>
-                <?php foreach($countries as $list):?>
-                <option value="<?php echo $list->countryCode?>"><?php echo $list->countryName?></option>
-                <?php endforeach?>
+            <select name="country" disabled>
+                <option>Philippines</option>
             </select>
             <div class="clr"></div>
             
@@ -43,8 +40,8 @@
         </form>
     </div>
 </div>
-<footer><?php $this->load->view('templates/admin/includes/footer_page_view')?></footer>
-<?php $this->load->view('templates/admin/includes/footer_view')?>
+<footer><?php $this->load->view('templates/front_end/includes/footer_page_view')?></footer>
+<?php $this->load->view('templates/front_end/includes/footer_view')?>
 <script type="text/javascript">
 $(function() {
     $('input[name="zip"], input[name="phone"], input[name="fax"]').ForceNumericOnly();
@@ -61,7 +58,6 @@ $(function() {
                 error = 1;
             } else if($(zip).val().length < 4 && $(zip).val() != '') {
                 $(zip).addClass('error').next().html(" ");
-                //$(zip).next.html(" ");
                 $(zip).after("<p class='error-msg'>Zip must be 4-digit</p>");
                 
                 error = 1;
@@ -70,12 +66,14 @@ $(function() {
             }
         });
         
-        if($(countries).val() === '- Select -') {
+        /*
+         if($(countries).val() === '- Select -') {
             $(countries).addClass('error');
             $(countries).after("<p class='error-msg'>Please choose your country.</p>");
             
             error = 1;
-        }
+        } 
+         */
         
         if(error === 0) {
             alert('Success');

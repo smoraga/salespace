@@ -1,8 +1,8 @@
-<?php $this->load->view('templates/admin/includes/header_view')?>
+<?php $this->load->view('templates/front_end/includes/header_view')?>
 </head>
 <body>
 <div id="main-container">
-    <header><?php $this->load->view('templates/admin/includes/header_page_view')?></header>
+    <header><?php $this->load->view('templates/front_end/includes/header_page_view')?></header>
     <div id="main-wrapper">
         <div class="container">
             <h1>Reseller Registration</h1>
@@ -40,8 +40,8 @@
         </div>
     </div>
 </div>
-<footer><?php $this->load->view('templates/admin/includes/footer_page_view')?></footer>
-<?php $this->load->view('templates/admin/includes/footer_view')?>
+<footer><?php $this->load->view('templates/front_end/includes/footer_page_view')?></footer>
+<?php $this->load->view('templates/front_end/includes/footer_view')?>
 <script type="text/javascript">
 $(function() {
     $('input[name="submit"]').click(function() {
