@@ -9,6 +9,10 @@ class Dashboard extends CI_Controller {
     {
         $this->load->view("templates/admin/index_view");
     }
+    
+    public function home() {
+        $this->load->view("templates/admin/dashboard_view");
+    }
 }
 
 /* End of file welcome.php */
