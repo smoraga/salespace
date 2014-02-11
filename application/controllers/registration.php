@@ -6,18 +6,18 @@ class Registration extends CI_Controller {
     }
     
     public function supplier() {
-        $this->load->view('templates/front_end/registration/billing_address_view');
+        $this->load->view('templates/front_end/registration/supplier_view');
     }
     
     public function reseller() {
         $this->load->view('templates/front_end/registration/reseller_view');
     }
 	
-	public function billing_address() {
-		$this->load->view('template/front_end/registration/billing_address_view');
-	}
-	
-	public function financial() {
-		$this->load->view('template/front_end/registration/financial_view');
-	}
+    public function billing_address() {
+        $this->load->view('templates/front_end/registration/billing_address_view');
+    }
+
+    public function financial() {
+        $this->load->view('templates/front_end/registration/financial_view');
+    }
 }

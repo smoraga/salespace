@@ -15,7 +15,7 @@
                     <section class="panel">
                         <div class="user-heading round">
                             <a href="#">
-                                <img src="<?php echo base_url('assets/img/profile-avatar.jpg')?>" alt="">
+                                <img src="<?php echo base_url('assets/admin/img/profile-avatar.jpg')?>" alt="">
                             </a>
                             <h1>Jonathan Smith</h1>
                             <p>jsmith@flatlab.com</p>
@@ -155,5 +155,5 @@
 </div>
 <footer><?php $this->load->view('templates/admin/includes/footer_page_view')?></footer>
 <?php $this->load->view('templates/admin/includes/footer_view')?>
-<script src="<?php echo base_url('assets/js/plugins/jquery-knob/js/jquery.knob.js')?>"></script>
+<script src="<?php echo base_url('assets/admin/js/plugins/jquery-knob/js/jquery.knob.js')?>"></script>
 <script type="text/javascript">$(".knob").knob();</script>

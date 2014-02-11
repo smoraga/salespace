@@ -4,40 +4,42 @@
 <div id="main-container">
     <header><?php $this->load->view('templates/front_end/includes/header_page_view')?></header>
     <div id="main-wrapper">
+        <div class="container">
         <h1>Billing Information</h1>
-        <form action="" method="">
-            <label>Company</label>
-            <input type="text" name="company" value=""/>
-            <div class="clr"></div>
-            
-            <label>Address</label>
-            <input type="text" name="address" value="" />
-            <div class="clr"></div>
-            
-            <label>Country</label>
-            <select name="country" disabled>
-                <option>Philippines</option>
-            </select>
-            <div class="clr"></div>
-            
-            <label>City</label>
-            <input type="text" name="address" value="" />
-            <div class="clr"></div>
-            
-            <label>Zip</label>
-            <input type="text" name="zip" value="" />
-            <div class="clr"></div>
-            
-            <label>Phone</label>
-            <input type="text" name="phone" value="" />
-            <div class="clr"></div>
-            
-            <label>Fax</label>
-            <input type="text" name="fax" value="" />
-            <div class="clr"></div>
-            
-            <input type="submit" name="submit" value="Next" />
-        </form>
+            <form action="" method="">
+                <label>Company</label>
+                <input type="text" name="company" value=""/>
+                <div class="clr"></div>
+
+                <label>Address</label>
+                <input type="text" name="address" value="" />
+                <div class="clr"></div>
+
+                <label>Country</label>
+                <select name="country" disabled>
+                    <option>Philippines</option>
+                </select>
+                <div class="clr"></div>
+
+                <label>City</label>
+                <input type="text" name="address" value="" />
+                <div class="clr"></div>
+
+                <label>Zip</label>
+                <input type="text" name="zip" value="" />
+                <div class="clr"></div>
+
+                <label>Phone</label>
+                <input type="text" name="phone" value="" />
+                <div class="clr"></div>
+
+                <label>Fax</label>
+                <input type="text" name="fax" value="" />
+                <div class="clr"></div>
+
+                <input type="submit" name="submit" value="Next" />
+            </form>    
+        </div>
     </div>
 </div>
 <footer><?php $this->load->view('templates/front_end/includes/footer_page_view')?></footer>
