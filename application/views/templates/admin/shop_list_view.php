@@ -310,5 +310,7 @@
     <!--main content end-->
 </div>
 <footer><?php $this->load->view('templates/admin/includes/footer_page_view')?></footer>
+<?php $this->load->view('templates/admin/includes/footer_view')?>
 <script type="text/javascript">$(function(){ $('select.styled').customSelect(); });</script>
-<?php $this->load->view('templates/admin/includes/footer_view')?>      
+</body>
+</html>

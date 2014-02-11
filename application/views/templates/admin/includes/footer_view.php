@@ -19,23 +19,3 @@
 <script type="text/javascript" src="<?php echo base_url('assets/js/plugins/sparkline-chart.js')?>"></script>
 <script type="text/javascript" src="<?php echo base_url('assets/js/plugins/easy-pie-chart.js')?>"></script>
 <script type="text/javascript" src="<?php echo base_url('assets/js/plugins/count.js')?>"></script>
-
-<script type="text/javascript">
-//owl carousel
-$(document).ready(function() {
-    $("#owl-demo").owlCarousel({
-        navigation : true,
-        slideSpeed : 300,
-        paginationSpeed : 400,
-        singleItem : true,
-        autoPlay:true
-    });
-});
-
-//custom select box
-$(function(){
-    $('select.styled').customSelect();
-});
-</script>
-</body>
-</html>

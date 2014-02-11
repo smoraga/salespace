@@ -10,6 +10,9 @@ var inputText   = $('input[type="text"]'),
     password    = $('input[name="password"]'),
     cpassword   = $('input[name="cpassword"]'),
     email       = $('input[name="email"]'),
+    countries   = $('select[name="country"]'),
+    zip         = $('input[name="zip"]'),
+    fax         = $('input[name="fax"]'),
     error       = 0;
 
 /*  

@@ -154,6 +154,6 @@
     </section>
 </div>
 <footer><?php $this->load->view('templates/admin/includes/footer_page_view')?></footer>
+<?php $this->load->view('templates/admin/includes/footer_view')?>
 <script src="<?php echo base_url('assets/js/plugins/jquery-knob/js/jquery.knob.js')?>"></script>
 <script type="text/javascript">$(".knob").knob();</script>
-<?php $this->load->view('templates/admin/includes/footer_view')?>

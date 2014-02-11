@@ -41,7 +41,7 @@
     </div>
 </div>
 <footer><?php $this->load->view('templates/admin/includes/footer_page_view')?></footer>
-<?php $this->load->view('templates/admin/includes/footer_view')?>            
+<?php $this->load->view('templates/admin/includes/footer_view')?> 
 <script type="text/javascript">
 $(function() {
     $('input[name="submit"]').click(function() {
@@ -99,3 +99,5 @@ $(function() {
    });
 });
 </script>
+</body>
+</html>

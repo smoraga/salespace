@@ -40,7 +40,7 @@
                                 <ul class="unstyled">
                                     <li>Invoice Number		: <strong>69626</strong></li>
                                     <li>Invoice Date		: 2013-03-17</li>
-                                    <li>Due Date			: 2013-03-20</li>
+                                    <li>Due Date		: 2013-03-20</li>
                                     <li>Invoice Status		: Paid</li>
                                 </ul>
                             </div>
