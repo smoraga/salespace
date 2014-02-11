@@ -13,7 +13,7 @@ class Registration extends CI_Controller {
         $this->load->view('templates/front_end/registration/reseller_view');
     }
 	
-    public function billing_address() {
+    public function billing_information() {
         $this->load->view('templates/front_end/registration/billing_address_view');
     }
 
