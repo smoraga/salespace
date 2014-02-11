@@ -1,20 +1,24 @@
 /*
  * Variable names for input fields.
  */
-var inputText   = $('input[type="text"]'),
-    inputPass   = $('input[type="password"]'),
-    firstname   = $('input[name="firstname"]'),
-    lastname    = $('input[name="lastname"]'),
-    middle_name = $('input[name="middle_name"]'),
-    username    = $('input[name="username"]'),
-    password    = $('input[name="password"]'),
-    cpassword   = $('input[name="cpassword"]'),
-    email       = $('input[name="email"]'),
-    countries   = $('select[name="country"]'),
-    zip         = $('input[name="zip"]'),
-    fax         = $('input[name="fax"]'),
-    company     = $('input[name="company"]'),
-    error       = 0;
+var inputText   	= $('input[type="text"]'),
+    inputPass   	= $('input[type="password"]'),
+    firstname   	= $('input[name="firstname"]'),
+    lastname    	= $('input[name="lastname"]'),
+    middle_name 	= $('input[name="middle_name"]'),
+    username    	= $('input[name="username"]'),
+    password    	= $('input[name="password"]'),
+    cpassword   	= $('input[name="cpassword"]'),
+    email       	= $('input[name="email"]'),
+    countries   	= $('select[name="country"]'),
+    zip         	= $('input[name="zip"]'),
+    fax         	= $('input[name="fax"]'),
+    company     	= $('input[name="company"]'),
+    company_address	= $('input[name="company_address"]'),
+    company_phone	= $('input[name="company_phone"]'),
+    company_fax		= $('input[name="company_fax"]'),
+    sec_number		= $('input[name="sec_number"]'),
+    error       	= 0;
 
 /*  
  * RegEx validation for Email 
