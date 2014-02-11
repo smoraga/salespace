@@ -6,7 +6,7 @@
     <div id="main-wrapper">
         <div class="container">
         <h1>Billing Information</h1>
-            <form action="" method="">
+            <form id="reg_billing_form">
                 <label>Company</label>
                 <input type="text" name="company" value=""/>
                 <div class="clr"></div>
@@ -16,13 +16,13 @@
                 <div class="clr"></div>
 
                 <label>Country</label>
-                <select name="country" disabled>
-                    <option>Philippines</option>
+                <select name="country">
+                    <option selected="selected" value="Philippines">Philippines</option>
                 </select>
                 <div class="clr"></div>
 
                 <label>City</label>
-                <input type="text" name="address" value="" />
+                <input type="text" name="city" value="" />
                 <div class="clr"></div>
 
                 <label>Zip</label>
@@ -77,11 +77,27 @@ $(function() {
         } 
          */
         
-        if(error === 0) {
-            alert('Success');
-        } else {
-            return false;
-        }
+        if(error == 0) {
+            $.ajax({
+                url: "<?php echo base_url(); ?>registration/process_billing_address",
+                type: "POST",
+                data: $("#reg_billing_form").serialize(),
+                success: function(response){
+                    var resp = jQuery.parseJSON(response);
+                    if(resp.success === true) {
+                        window.location.href = resp.redirect_url;
+                    } else {
+                        alert(resp.success);
+                        alert(resp.errors.username);
+                        alert(resp.errors.password);
+                    }             
+                },
+                error: function(jqXHR, textStatus, errorThrown){
+                    alert('error');
+                }
+            });
+        } 
+        return false;
     });
 })
 </script> 

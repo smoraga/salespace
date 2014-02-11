@@ -81,14 +81,18 @@ $(function() {
         if(error == 0) {
             //$(this).submit();
             $.ajax({
-                url: "<?php echo base_url(); ?>admin/supplier/register_supplier",
+                url: "<?php echo base_url(); ?>registration/process_client_information",
                 type: "POST",
                 data: $("#reg_supplier_form").serialize(),
                 success: function(response){
                     var resp = jQuery.parseJSON(response);
-                    alert(resp.success);
-                    alert(resp.errors.username);
-                    alert(resp.errors.password);              
+                    if(resp.success === true) {
+                        window.location.href = resp.redirect_url;
+                    } else {
+                        alert(resp.success);
+                        alert(resp.errors.username);
+                        alert(resp.errors.password);
+                    }
                 },
                 error: function(jqXHR, textStatus, errorThrown){
                     alert('error');
