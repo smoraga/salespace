@@ -6,13 +6,13 @@
     <div id="main-wrapper">
         <div class="container">
             <h1>Reseller Registration</h1>
-            <form action="" method="POST">
+            <form id="reg_reseller_form">
                 <label>firstname</label>
-                <input type="text" name="firstname" value="" />
+                <input type="text" name="first_name" value="" />
                 <div class=""></div>
 
                 <label>Lastname</label>
-                <input type="text" name="lastame" value="" />
+                <input type="text" name="last_name" value="" />
                 <div class=""></div>
 
                 <label>Middle Name</label>
@@ -79,10 +79,23 @@ $(function() {
         });
 
         if(error == 0) {
-            $(this).submit();
-        } else {
-            return false;
+            //$(this).submit();
+            $.ajax({
+                url: "<?php echo base_url(); ?>admin/reseller/register_reseller",
+                type: "POST",
+                data: $("#reg_reseller_form").serialize(),
+                success: function(response){
+                    var resp = jQuery.parseJSON(response);
+                    alert(resp.success);
+                    alert(resp.errors.username);
+                    alert(resp.errors.password);              
+                },
+                error: function(jqXHR, textStatus, errorThrown){
+                    alert('error');
+                }
+            });
         }
+        return false;
    });
 });
 </script>

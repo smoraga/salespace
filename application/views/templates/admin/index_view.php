@@ -5,7 +5,7 @@
     <header><?php $this->load->view('templates/admin/includes/header_page_view')?></header>
     <div id="main-wrapper">
         <div class="container">
-          <form class="form-signin" action="">
+          <form class="form-signin" id="signin_form">
             <h2 class="form-signin-heading">sign in now</h2>
             <div class="login-wrap">
                 <input type="text" name="username" class="form-control" placeholder="User ID" autofocus>
@@ -78,6 +78,7 @@ $(function() {
             error = 1;
         } else {
             username.addClass('error-succes');
+            error = 0;
         }
         
         if($(password).val() === '') {
@@ -85,14 +86,26 @@ $(function() {
             password.after('<p class="error-msg">Please fill the required field</p>');
             error = 1;
         } else {
-            password.addClass('error-succes');
+-           password.addClass('error-succes');
         }
         
-        if(error === 0) {
-            $(this).submit();
-        } else {
-            return false;
+        if(error == 0) {
+            //$(this).submit();
+            $.ajax({
+                url: "<?php echo base_url(); ?>admin/dashboard/login",
+                type: "POST",
+                data: $("#signin_form").serialize(),
+                success: function(response){
+                    var resp = jQuery.parseJSON(response);
+                    alert(resp.success);
+                    alert(resp.msg);
+                },
+                error: function(jqXHR, textStatus, errorThrown){
+                    alert('error');
+                }
+            });
         }
+        return false;
     }); 
 });
 </script>
