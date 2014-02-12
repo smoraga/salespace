@@ -18,6 +18,9 @@ var inputText   	= $('input[type="text"]'),
     company_phone	= $('input[name="company_phone"]'),
     company_fax		= $('input[name="company_fax"]'),
     sec_number		= $('input[name="sec_number"]'),
+    cc_type             = $('select[name="cc_type"]'),
+    month               = $('select[name="month"]'),
+    year                = $('select[name="year"]'),
     error       	= 0;
 
 /*  

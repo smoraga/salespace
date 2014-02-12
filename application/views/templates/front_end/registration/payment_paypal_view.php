@@ -6,7 +6,8 @@
     <div id="main-wrapper">
         <form action="" method="">
             <label>Creditcard Type</label>
-            <select name="cc_tye">
+            <select name="cc_type" attr-name="Credit Card Type">
+                <option>- Choose -</option>
                 <option value="Master Card">Master Card</option>
                 <option value="Visa">Visa</option>
                 <option value="American Express">American Express</option>
@@ -14,7 +15,7 @@
             <div class="clr"></div>
             
             <label>Creditcard Number</label>
-            <input type="text" name="creditcard_number" value="" />
+            <input type="text" name="cc_number" attr-name="Credit Card Number" value="" />
             <div class="clr"></div>
             
             <label>Expiration Date</label>
@@ -45,7 +46,7 @@
             <div class="clr"></div>
             
             <label>Last 3 digits</label>
-            <input type="text" name="last_digit" value="" />
+            <input type="text" name="last_digit" attr-name="Last Digit" value="" />
             <div class="clr"></div>
             
             <input type="submit" name="submit" value="Pay" />
@@ -57,6 +58,50 @@
 <script type="text/javascript">
 $(function() {
    $('input[name="creditcard_number"], input[name="last_digit"]').ForceNumericOnly();
+   
+   $('input[name="submit"]').click(function() {
+        $('*').removeClass('error');
+        $('*').remove('.error-msg');
+       
+        if($(cc_type).val() === '- Choose -') {
+            $(cc_type).addClass('error');
+            $(cc_type).next().html("<p class='error-msg'>Please choose your credit card type</p>");
+            error = 1;
+        } else {
+            error = 0;
+        }
+        
+        $(inputText).each(function(n, input) {
+            if($(input).val() === '') {
+                $(this).addClass('error');
+                $(this).after("<p class='error-msg'>The " + $(input).attr('attr-name') + " field is required.</p>");
+                
+                error = 1;
+            } else if($('input[name="last_digit"]').val().length < 3 && $('input[name="last_digit"]').val() != '') {
+                $('input[name="last_digit"]').addClass('error').next().html(" ");
+                $('input[name="last_digit"]').after("<p class='error-msg'>Minimum of 3 digits</p>");
+                
+                error = 1;
+            } else if($('input[name="cc_number"]').val().length < 16 && $('input[name="cc_number"]').val() != '') {
+                $('input[name="cc_number"]').addClass('error').next().html(" ");
+                $('input[name="cc_number"]').after("<p class='error-msg'>Minimum of 16 digits</p>");
+                
+                error = 1;
+            } else {
+                error = 0;
+            }
+        });
+        
+        if($(month).val() === '- MM -' || $(year).val() === '- YY -') {
+            $(year).after('<p class="error-msg">The Month/Year is required.</p>');
+        }
+
+        if(error === 0) {
+            alert('Success');
+        } else {
+            return false;
+        }
+   });
 });
 </script>
 </body>
