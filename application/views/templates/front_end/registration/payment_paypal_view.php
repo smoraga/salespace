@@ -5,8 +5,8 @@
     <header><?php $this->load->view('templates/front_end/includes/header_page_view')?></header>
     <div id="main-wrapper">
         <form action="" method="">
-            <label>Creditcard Type</labe>
-            <select name="">
+            <label>Creditcard Type</label>
+            <select name="cc_tye">
                 <option value="Master Card">Master Card</option>
                 <option value="Visa">Visa</option>
                 <option value="American Express">American Express</option>
@@ -18,22 +18,22 @@
             <div class="clr"></div>
             
             <label>Expiration Date</label>
-            <select name="">
+            <select name="month">
                 <option>- MM -</option>
-                <option>01</option>
-                <option>02</option>
-                <option>03</option>
-                <option>04</option>
-                <option>05</option>
-                <option>06</option>
-                <option>07</option>
-                <option>08</option>
-                <option>09</option>
-                <option>10</option>
-                <option>11</option>
-                <option>12</option>
+                <option value="01">01</option>
+                <option value="02">02</option>
+                <option value="03">03</option>
+                <option value="04">04</option>
+                <option value="05">05</option>
+                <option value="06">06</option>
+                <option value="07">07</option>
+                <option value="08">08</option>
+                <option value="09">09</option>
+                <option value="10">10</option>
+                <option value="11">11</option>
+                <option value="12">12</option>
             </select>
-            <select name="">
+            <select name="year">
                 <option>- YY -</option>
                 <?php 
                     for($i =0; $i <= 4 ;$i++):
