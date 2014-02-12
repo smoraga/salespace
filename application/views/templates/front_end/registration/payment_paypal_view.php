@@ -54,9 +54,27 @@
     </div>
 </div>
 <footer><?php $this->load->view('templates/front_end/includes/footer_page_view')?></footer>
+<div id="process" class="modal" data-backdrop="static">
+    <div class="modal-body">
+        Processing....
+
+    </div>
+</div>
 <?php $this->load->view('templates/front_end/includes/footer_view')?>
 <script type="text/javascript">
 $(function() {
+   
+   /*
+    * To call modal
+    * $("#process").modal({ dynamic: true });
+    */
+   
+   /*
+    * To hide modal
+    * $('#process').modal('hide');
+    */
+}
+
    $('input[name="creditcard_number"], input[name="last_digit"]').ForceNumericOnly();
    
    $('input[name="submit"]').click(function() {

@@ -7,14 +7,16 @@
     <title>Salespace - Front-end</title>
 
     <!-- Bootstrap core CSS -->
-    <link href="<?php echo base_url('assets/css/bootstrap.min.css')?>" rel="stylesheet">
-    <link href="<?php echo base_url('assets/css/bootstrap-reset.css')?>" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="<?php echo base_url('assets/css/bootstrap.css')?>" />
+    <link rel="stylesheet" type="text/css" href="<?php echo base_url('assets/css/bootstrap-reset.css')?>" />
  
 	<!-- Custom styles for this template -->
-    <link href="<?php echo base_url('assets/front_end/css/style.css')?>" rel="stylesheet">
-    <link href="<?php echo base_url('assets/front_end/css/style-responsive.css')?>" rel="stylesheet" />
+    <link rel="stylesheet" type="text/css" href="<?php echo base_url('assets/front_end/css/style.css')?>" />
+	<link rel="stylesheet" type="text/css" href="<?php echo base_url('assets/front_end/css/normalize.css')?>" />
+	<link rel="stylesheet" type="text/css" href="<?php echo base_url('assets/front_end/css/bootstrap-scroll-modal.css')?>" />
+    <link rel="stylesheet" type="text/css" href="<?php echo base_url('assets/front_end/css/style-responsive.css')?>" />
 
-    <!-- HTML5 shim and Respond.js IE8 support of HTML5 tooltipss and media queries -->
+    <!-- HTML5 shim and Respond.js IE8 support of HTML5 tool tips and media queries -->
     <!--[if lt IE 9]>
       <script src="js/html5shiv.js"></script>
       <script src="js/respond.min.js"></script>
