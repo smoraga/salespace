@@ -4,11 +4,11 @@
 <div id="main-container">
     <header><?php $this->load->view('templates/front_end/includes/header_page_view')?></header>
     <div id="main-wrapper">
-        <form action="" method="">
+        <form id="pay_paypal_form">
             <label>Creditcard Type</label>
             <select name="cc_type" attr-name="Credit Card Type">
                 <option>- Choose -</option>
-                <option value="Master Card">Master Card</option>
+                <option value="MasterCard">Master Card</option>
                 <option value="Visa">Visa</option>
                 <option value="American Express">American Express</option>
             </select>
@@ -19,7 +19,7 @@
             <div class="clr"></div>
             
             <label>Expiration Date</label>
-            <select name="month">
+            <select name="cc_month">
                 <option>- MM -</option>
                 <option value="01">01</option>
                 <option value="02">02</option>
@@ -34,7 +34,7 @@
                 <option value="11">11</option>
                 <option value="12">12</option>
             </select>
-            <select name="year">
+            <select name="cc_year">
                 <option>- YY -</option>
                 <?php 
                     for($i =0; $i <= 4 ;$i++):
@@ -46,7 +46,7 @@
             <div class="clr"></div>
             
             <label>Last 3 digits</label>
-            <input type="text" name="last_digit" attr-name="Last Digit" value="" />
+            <input type="text" name="cc_last_digit" attr-name="Last Digit" value="" />
             <div class="clr"></div>
             
             <input type="submit" name="submit" value="Pay" />
@@ -73,9 +73,8 @@ $(function() {
     * To hide modal
     * $('#process').modal('hide');
     */
-}
 
-   $('input[name="creditcard_number"], input[name="last_digit"]').ForceNumericOnly();
+   $('input[name="cc_number"], input[name="cc_last_digit"]').ForceNumericOnly();
    
    $('input[name="submit"]').click(function() {
         $('*').removeClass('error');
@@ -95,9 +94,9 @@ $(function() {
                 $(this).after("<p class='error-msg'>The " + $(input).attr('attr-name') + " field is required.</p>");
                 
                 error = 1;
-            } else if($('input[name="last_digit"]').val().length < 3 && $('input[name="last_digit"]').val() != '') {
-                $('input[name="last_digit"]').addClass('error').next().html(" ");
-                $('input[name="last_digit"]').after("<p class='error-msg'>Minimum of 3 digits</p>");
+            } else if($('input[name="cc_last_digit"]').val().length < 3 && $('input[name="cc_last_digit"]').val() != '') {
+                $('input[name="cc_last_digit"]').addClass('error').next().html(" ");
+                $('input[name="cc_last_digit"]').after("<p class='error-msg'>Minimum of 3 digits</p>");
                 
                 error = 1;
             } else if($('input[name="cc_number"]').val().length < 16 && $('input[name="cc_number"]').val() != '') {
@@ -115,10 +114,28 @@ $(function() {
         }
 
         if(error === 0) {
-            alert('Success');
-        } else {
-            return false;
+            $("#process").modal({ dynamic: true });
+            $.ajax({
+                url: "<?php echo base_url(); ?>payment/process_paypal",
+                type: "POST",
+                data: $("#pay_paypal_form").serialize(),
+                success: function(response){
+                    var resp = jQuery.parseJSON(response);
+                    if(resp.success === true) {
+                        $('#process').modal('hide');
+                        window.location.href = resp.redirect_url;
+                    } else {
+                        alert(resp.success);
+                        $('#process').modal('hide');
+                    }
+                },
+                error: function(jqXHR, textStatus, errorThrown){
+                    alert('error');
+                    $('#process').modal('hide');
+                }
+            });
         }
+        return false;
    });
 });
 </script>

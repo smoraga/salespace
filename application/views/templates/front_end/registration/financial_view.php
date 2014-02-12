@@ -32,6 +32,10 @@
                 <input type="text" name="sec_number" />
                 <div class="clr"></div>
                 
+                <label>Company Email</label>
+                <input type="text" name="company_email" />
+                <div class="clr"></div>
+                
                 <input type="submit" name="submit" value="Next" />
             </form>
         </div>
@@ -69,8 +73,6 @@ $(function() {
                         window.location.href = resp.redirect_url;
                     } else {
                         alert(resp.success);
-                        alert(resp.errors.username);
-                        alert(resp.errors.password);
                     }
                 },
                 error: function(jqXHR, textStatus, errorThrown){

@@ -24,6 +24,10 @@
                 <label>City</label>
                 <input type="text" name="city" value="" />
                 <div class="clr"></div>
+                
+                <label>State</label>
+                <input type="text" name="state" value="" />
+                <div class="clr"></div>
 
                 <label>Zip</label>
                 <input type="text" name="zip" value="" />

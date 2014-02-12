@@ -6,7 +6,7 @@
     <div id="main-wrapper">
         <div class="container">
             <h1>Supplier Registration</h1>
-            <form  id="reg_supplier_form">
+            <form id="reg_supplier_form">
                 <label>Firstname</label>
                 <input type="text" name="first_name" value="" attr-name="Firstname" />
                 <div class=""></div>

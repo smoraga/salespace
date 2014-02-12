@@ -10,20 +10,50 @@ class Accounts_model extends CI_Model
     function insert_reseller($data)
     {
         $data['date_registered'] = date('Y-m-d h:i:s');
-        $data['password'] = md5($data['password']);
         return $this->db->insert('client', $data);
     }
     
     /*
      * Insert Supplier
      * @param array $data (required)
-     * @return boolean
+     * @return array
      */
     function insert_supplier($data)
     {
         $data['date_registered'] = date('Y-m-d h:i:s');
-        $data['password'] = md5($data['password']);
-        return $this->db->insert('client', $data);
+        $data['status'] = $this->db->insert('client', $data);
+        if($data['status'] === TRUE) {
+            $data['id'] = $this->db->insert_id();
+        }
+        return $data;
+    }
+    
+    /*
+     * Insert Billing Information
+     * @param array $data (required)
+     * @return array
+     */
+    function insert_billing_information($data)
+    {
+        $data['status'] = $this->db->insert('client_billing', $data);
+        if($data['status'] === TRUE) {
+            $data['id'] = $this->db->insert_id();
+        }
+        return $data;
+    }
+    
+    /*
+     * Insert Financial Information
+     * @param array $data (required)
+     * @return array
+     */
+    function insert_financial_information($data)
+    {
+        $data['status'] = $this->db->insert('financial', $data);
+        if($data['status'] === TRUE) {
+            $data['id'] = $this->db->insert_id();
+        }
+        return $data;
     }
     
     /*

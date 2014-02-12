@@ -22,11 +22,15 @@ class Registration extends CI_Controller {
         $this->load->view('templates/front_end/registration/financial_view');
     }
     
+    public function thankyou() {
+        $this->load->view('templates/front_end/registration/paypal_thankyou_view');
+    }
+    
     /* Process */
     public function process_client_information()
     {
         $this->load->helper(array('form'));
-        $this->load->library('form_validation');
+        $this->load->library(array('form_validation', 'encrypt'));
 
         $this->form_validation->set_rules('first_name', 'First name', 'required');
         $this->form_validation->set_rules('last_name', 'Last name', 'required');
@@ -58,6 +62,8 @@ class Registration extends CI_Controller {
                                     'first_name'    => $this->input->post('first_name', TRUE),
                                     'last_name'     => $this->input->post('last_name', TRUE),
                                     'middle_name'   => $this->input->post('middle_name', TRUE),
+                                    'username'      => $this->input->post('username', TRUE),
+                                    'password'      => $this->encrypt->encode($this->input->post('password', TRUE)),
                                     'email'         => $this->input->post('email', TRUE)
             );
             
@@ -81,6 +87,7 @@ class Registration extends CI_Controller {
         $this->form_validation->set_rules('address', 'Address', 'required');
         $this->form_validation->set_rules('country', 'Country', 'required');
         $this->form_validation->set_rules('city', 'City', 'required');
+        $this->form_validation->set_rules('state', 'State', 'required');
         $this->form_validation->set_rules('zip', 'Zip', 'required|min_length[4]|numeric');
         $this->form_validation->set_rules('phone', 'phone', 'required|numeric');
         $this->form_validation->set_rules('fax', 'fax', 'required|numeric');
@@ -95,6 +102,7 @@ class Registration extends CI_Controller {
                 'address'   => form_error('address', ' ', ' '),
                 'country'   => form_error('country', ' ', ' '),
                 'city'      => form_error('city', ' ', ' '),
+                'state'      => form_error('state', ' ', ' '),
                 'zip'       => form_error('zip', ' ', ' '),
                 'phone'     => form_error('phone', ' ', ' '),
                 'fax'       => form_error('fax', ' ', ' ')
@@ -108,6 +116,7 @@ class Registration extends CI_Controller {
                                     'address'   => $this->input->post('address', TRUE),
                                     'country'   => $this->input->post('country', TRUE),
                                     'city'      => $this->input->post('city', TRUE),
+                                    'state'      => $this->input->post('state', TRUE),
                                     'zip'       => $this->input->post('zip', TRUE),
                                     'phone'     => $this->input->post('phone', TRUE),
                                     'fax'       => $this->input->post('fax', TRUE)
@@ -129,6 +138,7 @@ class Registration extends CI_Controller {
         $this->form_validation->set_rules('company_phone', 'Company phone', 'required|numeric');
         $this->form_validation->set_rules('company_fax', 'Company Fax', 'required|numeric');
         $this->form_validation->set_rules('sec_number', 'Sec Number', 'required');
+        $this->form_validation->set_rules('company_email', 'Company Email', 'required');
         
         $posts = $this->input->post();
         $data['success'] = FALSE;
@@ -142,18 +152,20 @@ class Registration extends CI_Controller {
                 'company_phone'     => form_error('company_phone', ' ', ' '),
                 'company_fax'       => form_error('company_fax', ' ', ' '),
                 'sec_number'        => form_error('sec_number', ' ', ' '),
+                'company_email'        => form_error('company_email', ' ', ' '),
             );          
           } else {
             $data['success'] = TRUE;
-            $data['redirect_url'] = base_url().'registration/financial';
+            $data['redirect_url'] = base_url().'payment';
             
             $financial_info = array(
-                                    'company'   => $this->input->post('tin', TRUE),
-                                    'address'   => $this->input->post('company', TRUE),
-                                    'country'   => $this->input->post('company_address', TRUE),
-                                    'city'      => $this->input->post('company_phone', TRUE),
-                                    'zip'       => $this->input->post('company_fax', TRUE),
-                                    'phone'     => $this->input->post('sec_number', TRUE)
+                                    'tin_number'   => $this->input->post('tin', TRUE),
+                                    'company_name'   => $this->input->post('company', TRUE),
+                                    'company_address'   => $this->input->post('company_address', TRUE),
+                                    'company_phone'      => $this->input->post('company_phone', TRUE),
+                                    'company_fax'       => $this->input->post('company_fax', TRUE),
+                                    'sec_number'     => $this->input->post('sec_number', TRUE),
+                                    'company_email'     => $this->input->post('company_email', TRUE)
             );
             $this->_parse_session_info($financial_info, 'financial_info');
           }
@@ -173,11 +185,5 @@ class Registration extends CI_Controller {
         } else {
             return FALSE;
         }
-    }
-    
-    public function get_session()
-    {
-        $a = $this->session->userdata('credentials');
-        print_r($a);
     }
 }
