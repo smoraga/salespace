@@ -10,7 +10,8 @@ class Address_model extends CI_Model {
     }
     
     function get_all_city($what = '*') {
-        $query = $this->db->select($what)
+        $query = $this->db->distinct()
+                            ->select('city')
                             ->from('postal_city_state_region')
                             ->get();
         
