@@ -8,11 +8,11 @@
         <h1>Billing Information</h1>
             <form id="reg_billing_form">
                 <label>Company</label>
-                <input type="text" name="company" value=""/>
+                <input type="text" name="company" value="" attr-name="Company" />
                 <div class="clr"></div>
 
                 <label>Address</label>
-                <input type="text" name="address" value="" />
+                <input type="text" name="address" value="" attr-name="Address" />
                 <div class="clr"></div>
 
                 <label>Country</label>
@@ -22,23 +22,28 @@
                 <div class="clr"></div>
 
                 <label>City</label>
-                <input type="text" name="city" value="" />
+                <select name="city">
+                    <option>- Chooose -</option>
+                    <?php foreach($cities as $city):?>
+                    <option><?php echo $city->city?></option>
+                    <?php endforeach?>
+                </select>
                 <div class="clr"></div>
                 
                 <label>State</label>
-                <input type="text" name="state" value="" />
+                <input type="text" name="state" value="" attr-name="State" />
                 <div class="clr"></div>
 
                 <label>Zip</label>
-                <input type="text" name="zip" value="" />
+                <input type="text" name="zip" value="" attr-name="Zip" />
                 <div class="clr"></div>
 
                 <label>Phone</label>
-                <input type="text" name="phone" value="" />
+                <input type="text" name="phone" value="" attr-name="Phone" />
                 <div class="clr"></div>
 
                 <label>Fax</label>
-                <input type="text" name="fax" value="" />
+                <input type="text" name="fax" value="" attr-name="Fax" />
                 <div class="clr"></div>
 
                 <input type="submit" name="submit" value="Next" />
@@ -59,7 +64,7 @@ $(function() {
         $(inputText).each(function(n, input) {
             if($(input).val() == 0) {
                 $(this).addClass('error');
-                $(input).after("<p class='error-msg'>Please fill the required field.</p>");
+                $(input).after("<p class='error-msg'>The " + $(input).attr('attr-name') + " field is required.</p>");
 
                 error = 1;
             } else if($(zip).val().length < 4 && $(zip).val() != '') {
@@ -71,6 +76,11 @@ $(function() {
                 error = 0;
             }
         });
+        
+        if($(city).val() == '- Chooose -') {
+            $(city).addClass('error');
+            $(city).after('<p class="error-msg">Please choose your city</p>');
+        }
         
         /*
          if($(countries).val() === '- Select -') {
