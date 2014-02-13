@@ -72,6 +72,11 @@ $(function() {
                 $(zip).after("<p class='error-msg'>Zip must be 4-digit</p>");
                 
                 error = 1;
+            } else if($(phone).val().length < 7 && $(phone).val() != '') {
+                $(phone).addClass('error').next().html(" ");
+                $(phone).after("<p class='error-msg'>The " + $(input).attr('attr-name') + " must be 7-digit</p>");
+                
+                error = 1;
             } else {
                 error = 0;
             }

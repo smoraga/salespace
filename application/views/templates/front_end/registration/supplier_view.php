@@ -94,10 +94,14 @@ $(function() {
                     if(resp.success === true) {
                         window.location.href = resp.redirect_url;
                     } else {
-                        alert(resp.success);
-                        alert(resp.errors.username);
-                        alert(resp.errors.password);
-                        alert(resp.errors.email);
+                        //alert(resp.success);
+                        //alert(resp.errors.username);
+                        //alert(resp.errors.password);
+                        //alert(resp.errors.email);
+                        
+                        /* Unique email errors */
+                        $(email).addClass('error');
+                        $(email).next().html("<p class='error-msg'>The Email field must contain a unique value.</p>");
                     }
                 },
                 error: function(jqXHR, textStatus, errorThrown){

@@ -19,7 +19,7 @@ class Registration extends CI_Controller {
         
         $data['cities'] = $this->address_model->get_all_city();
 		
-        $this->load->view('templates/front_end/registration/billing_address_view');
+        $this->load->view('templates/front_end/registration/billing_address_view', $data);
     }
 
     public function financial() {
