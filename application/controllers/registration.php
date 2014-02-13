@@ -93,7 +93,7 @@ class Registration extends CI_Controller {
         $this->form_validation->set_rules('city', 'City', 'required');
         $this->form_validation->set_rules('state', 'State', 'required');
         $this->form_validation->set_rules('zip', 'Zip', 'required|min_length[4]|numeric');
-        $this->form_validation->set_rules('phone', 'phone', 'required|numeric');
+        $this->form_validation->set_rules('phone', 'phone', 'required|min_length[4]|numeric');
         $this->form_validation->set_rules('fax', 'fax', 'required|numeric');
         
         $posts = $this->input->post();
@@ -139,7 +139,7 @@ class Registration extends CI_Controller {
         $this->form_validation->set_rules('tin', 'Tin', 'required');
         $this->form_validation->set_rules('company', 'Company', 'required');
         $this->form_validation->set_rules('company_address', 'Company Address', 'required');
-        $this->form_validation->set_rules('company_phone', 'Company phone', 'required|numeric');
+        $this->form_validation->set_rules('company_phone', 'Company phone', 'required|min_length[4]|numeric');
         $this->form_validation->set_rules('company_fax', 'Company Fax', 'required|numeric');
         $this->form_validation->set_rules('sec_number', 'Sec Number', 'required');
         $this->form_validation->set_rules('company_email', 'Company Email', 'required');
