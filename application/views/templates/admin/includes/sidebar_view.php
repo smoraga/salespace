@@ -10,6 +10,17 @@
                     </a>
                 </li>
                 <li class="sub-menu">
+                    <a  href="login.html">
+                        <i class="icon-user"></i>
+                        <span>Account</span>
+                    </a>
+                    <ul class="sub">
+                        <li><a href="#">Supplier</a></li>
+                        <li><a href="#">Reseller</a></li>
+                        <li><a href="#">Buyer</a></li>
+                    </ul>
+                </li>
+                <li class="sub-menu">
                     <a href="javascript:;" >
                         <i class="icon-shopping-cart"></i>
                         <span>Shop</span>

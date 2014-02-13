@@ -5,7 +5,7 @@
     <header><?php $this->load->view('templates/front_end/includes/header_page_view')?></header>
     <div id="main-wrapper">
         <div class="container">
-            <h1>Supplier Registration</h1>
+            <h1>Registration</h1>
             <form id="reg_supplier_form">
                 <label>Firstname</label>
                 <input type="text" name="first_name" value="" attr-name="Firstname" />
