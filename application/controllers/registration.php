@@ -6,7 +6,7 @@ class Registration extends CI_Controller {
     }
     
     /* Load Views */
-    public function supplier() {
+    public function index() {
         $this->load->view('templates/front_end/registration/supplier_view');
     }
     
