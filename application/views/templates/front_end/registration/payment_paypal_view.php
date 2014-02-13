@@ -126,6 +126,7 @@ $(function() {
                         window.location.href = resp.redirect_url;
                     } else {
                         alert(resp.success);
+                        alert(resp.errors.Errors[0].L_LONGMESSAGE);
                         $('#process').modal('hide');
                     }
                 },
