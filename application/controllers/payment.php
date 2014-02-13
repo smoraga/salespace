@@ -174,7 +174,7 @@ class Payment extends CI_Controller {
                 $PayPalResult = $this->paypal_pro->DoDirectPayment($PayPalRequestData);
 
                 if(!$this->paypal_pro->APICallSuccessful($PayPalResult['ACK'])) {
-                     $errors = array('Errors'=>$PayPalResult['ERRORS']);
+                     $errors = $PayPalResult['ERRORS'];
                      $data['errors'] = $errors;
                 } else {
                     $data['success'] = TRUE;
@@ -275,7 +275,7 @@ class Payment extends CI_Controller {
                 $PayPalResult = $this->paypal_pro->CreateRecurringPaymentsProfile($PayPalRequestData);
 		
                 if(!$this->paypal_pro->APICallSuccessful($PayPalResult['ACK'])) {
-                     $errors = array('Errors'=>$PayPalResult['ERRORS']);
+                     $errors = $PayPalResult['ERRORS'];
                      $data['errors'] = $errors;
                 } else {
                     $data['success'] = TRUE;
