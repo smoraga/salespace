@@ -297,7 +297,7 @@ class Payment extends CI_Controller {
                 $this->load->model('accounts_model');
                 
                 $client_info = $credentials['client_info'];
-                $client_info['type'] = 1;
+                $client_info['type'] = $this->session->userdata('client_type');
                 
                 
                 $insert_client_info = $this->accounts_model->insert_supplier($client_info);
@@ -318,6 +318,8 @@ class Payment extends CI_Controller {
                         
                         if($insert_financial_info['status'] === TRUE) {
                             $data['success'] = TRUE;
+                            $this->session->unset_userdata('credentials');
+                            $this->session->unset_userdata('client_type');
                         }
                     }
                 }
