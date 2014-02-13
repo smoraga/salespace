@@ -109,8 +109,8 @@ $(function() {
             }
         });
         
-        if($(month).val() === '- MM -' || $(year).val() === '- YY -') {
-            $(year).after('<p class="error-msg">The Month/Year is required.</p>');
+        if($('select[name="cc_month"]').val() === '- MM -' || $('select[name="cc_year"]').val() === '- YY -') {
+            $('select[name="cc_year"]').after('<p class="error-msg">The Month/Year is required.</p>');
         }
 
         if(error === 0) {
