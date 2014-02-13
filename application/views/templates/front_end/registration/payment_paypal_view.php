@@ -4,6 +4,7 @@
 <div id="main-container">
     <header><?php $this->load->view('templates/front_end/includes/header_page_view')?></header>
     <div id="main-wrapper">
+        <p id="paypal-error-msg" style="color:#ff0000"></p>
         <form id="pay_paypal_form">
             <label>Creditcard Type</label>
             <select name="cc_type" attr-name="Credit Card Type">
@@ -126,7 +127,7 @@ $(function() {
                         window.location.href = resp.redirect_url;
                     } else {
                         alert(resp.success);
-                        alert(resp.errors.Errors[0].L_LONGMESSAGE);
+                        $('#paypal-error-msg').html(resp.errors.Errors[0].L_LONGMESSAGE);
                         $('#process').modal('hide');
                     }
                 },
