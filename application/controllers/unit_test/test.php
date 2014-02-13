@@ -3,6 +3,7 @@
 class test extends CI_Controller {
     public function __construct() {
         parent::__construct();
+        $this->load->library('unit_test');
     }
     
     /* Load Views */
@@ -42,13 +43,15 @@ class test extends CI_Controller {
                         $insert_financial_info = $this->accounts_model->insert_financial_information($financial_info);
                         
                         if($insert_financial_info['status'] === TRUE) {
-                            echo 'Successfully Insert';
+                            $data['success'] = TRUE;
                         }
                     }
                 }
             }
         } else {
-            echo 'Invalid Credentials';
+            $data['success'] = FALSE;
         }
+        
+        echo $this->unit->run("Register User", TRUE, $data['success']);
     }
 }
