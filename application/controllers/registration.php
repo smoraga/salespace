@@ -15,6 +15,10 @@ class Registration extends CI_Controller {
     }
 	
     public function billing_information() {
+        $this->load->model('address_model');
+        
+        $data['cities'] = $this->address_model->get_all_city();
+		
         $this->load->view('templates/front_end/registration/billing_address_view');
     }
 

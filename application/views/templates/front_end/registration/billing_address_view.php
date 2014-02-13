@@ -22,7 +22,12 @@
                 <div class="clr"></div>
 
                 <label>City</label>
-                <input type="text" name="city" value="" />
+                <select name="city">
+                    <option>- Chooose -</option>
+                    <?php foreach($cities as $city):?>
+                    <option><?php echo $city->city?></option>
+                    <?php endforeach?>
+                </select>
                 <div class="clr"></div>
                 
                 <label>State</label>

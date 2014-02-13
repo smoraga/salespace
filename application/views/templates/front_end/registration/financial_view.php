@@ -45,7 +45,7 @@
 <?php $this->load->view('templates/front_end/includes/footer_view')?>
 <script type="text/javascript">
 $(function() {
-    $('input[name="sec_number"], input[name="company_phone"], input[name="company_fax"]').ForceNumericOnly();
+    $('input[name="tin"], input[name="sec_number"], input[name="company_phone"], input[name="company_fax"]').ForceNumericOnly();
     
     $('input[name="submit"]').click(function() {
         $('*').removeClass('error');
@@ -54,11 +54,14 @@ $(function() {
         $(inputText).each(function(n, input) {
             if($(input).val() === '') {
                 $(this).addClass('error');
-                $(input).after("<p class='error-msg'>Please fill the required field.</p>");
+                $(input).after("<p class='error-msg'>The " + $(input).attr('attr-name') + " field is required.</p>");
 
                 error = 1;
-            } else {
-                error = 0;
+            } else if(!isValidEmail($(company_email).val()) && $(company_email).val() != '') {
+                $(company_email).addClass('error').next().html(" ");
+                $(company_email).after("<p class='error-msg'>The Email field must contain a valid email address.</p>");
+
+                error = 1;
             }
         });
        
