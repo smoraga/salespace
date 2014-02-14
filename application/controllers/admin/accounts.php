@@ -10,10 +10,10 @@ class Accounts extends CI_Controller {
     }
     
     public function reseller_listing() {
-        
+        $this->load->view('templates/admin/accounts/reseller_listing_view');
     }
     
     public function buyer_listing() {
-        
+        $this->load->view('templates/admin/accounts/buyer_listing_view');
     }
 }

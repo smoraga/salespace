@@ -15,9 +15,9 @@
                         <span>Account</span>
                     </a>
                     <ul class="sub">
-                        <li><a href="#">Supplier</a></li>
-                        <li><a href="#">Reseller</a></li>
-                        <li><a href="#">Buyer</a></li>
+                        <li><a href="<?php echo base_url('admin/accounts/supplier_listing')?>">Supplier</a></li>
+                        <li><a href="<?php echo base_url('admin/accounts/reseller_listing')?>">Reseller</a></li>
+                        <li><a href="<?php echo base_url('admin/accounts/buyer_listing')?>">Buyer</a></li>
                     </ul>
                 </li>
                 <li class="sub-menu">
