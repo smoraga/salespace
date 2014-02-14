@@ -21,6 +21,7 @@ class Accounts_model extends CI_Model
     function insert_supplier($data)
     {
         $data['date_registered'] = date('Y-m-d h:i:s');
+        $data['password'] = md5($password);
         $data['status'] = $this->db->insert('client', $data);
         if($data['status'] === TRUE) {
             $data['id'] = $this->db->insert_id();
@@ -112,6 +113,48 @@ class Accounts_model extends CI_Model
     public function update_client_activated($email)
     {
         return $this->db->update('client', array('activated' => 1), array('email' => $email));
+    }
+    
+    /*
+     * Get Client
+     * @param $client_type (optional)
+     * @param $client_id (optional)
+     * @param $what (optional)
+     * @return array
+     */
+    function get_client($client_type = NULL, $client_id = NULL, $what = "*")
+    {
+        $query = $this->db->select($what)
+                          ->from('client')
+					 ->get();
+        
+        if(!empty($client_id)) $this->db->where('id', $client_id);
+        if(!empty($client_type)) $this->db->where('id', $client_type);
+
+        return $query->row_array();
+    }
+    
+    /*
+     * Delete Client
+     * @param string $client_id (required)
+     * @return boolean
+     */
+    function delete_client($client_id = NULL)
+    {
+        if(empty($client_id)) return FALSE;
+        $this->db->delete('client', array('id' => $client_id));
+    }
+    
+    /*
+     * Update Client
+     * @param string $client_id (required)
+     * @return boolean
+     */
+    function update_client($data = array())
+    {
+        if(empty($data)) return FALSE;
+        $this->db->where('id', $data['id']);
+        $this->db->update('client', $data); 
     }
 }
 ?>
