@@ -190,4 +190,11 @@ class Registration extends CI_Controller {
             return FALSE;
         }
     }
+    
+    public function set_client_type_session($type = NULL)
+    {
+        if(empty($type)) echo FALSE;
+        $this->session->set_userdata('client_type', $type);
+        echo TRUE;
+    }
 }
