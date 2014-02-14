@@ -12,7 +12,7 @@
                 <input type="text" name="tin" value="" attr-name="Tin" />
                 <div class="clr"></div>
                 
-                <label>Company Name</labe>
+                <label>Company Name</label>
                 <input type="text" name="company" value="" attr-name="Company Name" />
                 <div class="clr"></div>
                 
