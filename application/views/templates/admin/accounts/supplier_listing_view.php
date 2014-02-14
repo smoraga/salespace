@@ -10,152 +10,49 @@
     <!--main content start-->
     <section id="main-content">
         <section class="wrapper">
-            <div class="row">
-                <div class="col-lg-12">
-                    <section class="panel">
-                        <div class="panel-body">
-                            <button type="button" class="btn"><i class="icon-user"></i> Add User</button>
-                        </div>
-                    </section>
-                    <section class="panel">
-                        <header class="panel-heading">
-                            Supplier Listing
-                        </header>
-                        <div class="panel-body">
-                            <section id="flip-scroll">
-                                <table class="table table-bordered table-striped table-condensed cf">
-                                    <thead class="cf">
-                                    <tr>
-                                        <th>ID</th>
-                                        <th>Full name</th>
-                                        <th>Username</th>
-                                        <th>Actions</th>
-                                    </tr>
-                                    </thead>
-                                    <tbody>
-                                    <tr>
-                                        <td>AAC</td>
-                                        <td>AUSTRALIAN AGRICULTURAL COMPANY LIMITED.</td>
-                                        <td>John Doe</td>
-                                        <td>
-                                            <a href="#"><i class="icon-book"></i> View</a>&nbsp;
-                                            <a href="#"><i class="icon-edit"></i> Edit</a>&nbsp;
-                                            <a href="#"><i class="icon-remove"></i> Delete</a>
-                                        </td>
-                                    </tr>
-                                    <tr>
-                                        <td>AAD</td>
-                                        <td>ARDENT LEISURE GROUP</td>
-                                        <td>John Doe</td>
-                                        <td>
-                                            <a href="#"><i class="icon-book"></i> View</a>&nbsp;
-                                            <a href="#"><i class="icon-edit"></i> Edit</a>&nbsp;
-                                            <a href="#"><i class="icon-remove"></i> Delete</a>
-                                        </td>
-                                    </tr>
-                                    <tr>
-                                        <td>AAX</td>
-                                        <td>AUSENCO LIMITED</td>
-                                        <td>John Doe</td>
-                                        <td>
-                                            <a href="#"><i class="icon-book"></i> View</a>&nbsp;
-                                            <a href="#"><i class="icon-edit"></i> Edit</a>&nbsp;
-                                            <a href="#"><i class="icon-remove"></i> Delete</a>
-                                        </td>
-                                    </tr>
-                                    <tr>
-                                        <td>ABC</td>
-                                        <td>ADELAIDE BRIGHTON LIMITED</td>
-                                        <td>John Doe</td>
-                                        <td>
-                                            <a href="#"><i class="icon-book"></i> View</a>&nbsp;
-                                            <a href="#"><i class="icon-edit"></i> Edit</a>&nbsp;
-                                            <a href="#"><i class="icon-remove"></i> Delete</a>
-                                        </td>
-                                    </tr>
-                                    <tr>
-                                        <td>ABP</td>
-                                        <td>ABACUS PROPERTY GROUP</td>
-                                        <td>John Doe</td>
-                                        <td>
-                                            <a href="#"><i class="icon-book"></i> View</a>&nbsp;
-                                            <a href="#"><i class="icon-edit"></i> Edit</a>&nbsp;
-                                            <a href="#"><i class="icon-remove"></i> Delete</a>
-                                        </td>
-                                    </tr>
-                                    <tr>
-                                        <td>ABY</td>
-                                        <td>ADITYA BIRLA MINERALS LIMITED</td>
-                                        <td>John Doe</td>
-                                        <td>
-                                            <a href="#"><i class="icon-book"></i> View</a>&nbsp;
-                                            <a href="#"><i class="icon-edit"></i> Edit</a>&nbsp;
-                                            <a href="#"><i class="icon-remove"></i> Delete</a>
-                                        </td>
-                                    </tr>
-                                    <tr>
-                                        <td>ACR</td>
-                                        <td>ACRUX LIMITED</td>
-                                        <td>John Doe</td>
-                                        <td>
-                                            <a href="#"><i class="icon-book"></i> View</a>&nbsp;
-                                            <a href="#"><i class="icon-edit"></i> Edit</a>&nbsp;
-                                            <a href="#"><i class="icon-remove"></i> Delete</a>
-                                        </td>
-                                    </tr>
-                                    <tr>
-                                        <td>ADU</td>
-                                        <td>ADAMUS RESOURCES LIMITED</td>
-                                        <td>John Doe</td>
-                                        <td>
-                                            <a href="#"><i class="icon-book"></i> View</a>&nbsp;
-                                            <a href="#"><i class="icon-edit"></i> Edit</a>&nbsp;
-                                            <a href="#"><i class="icon-remove"></i> Delete</a>
-                                        </td>
-                                    </tr>
-                                    <tr>
-                                        <td>AGG</td>
-                                        <td>ANGLOGOLD ASHANTI LIMITED</td>
-                                        <td>John Doe</td>
-                                        <td>
-                                            <a href="#"><i class="icon-book"></i> View</a>&nbsp;
-                                            <a href="#"><i class="icon-edit"></i> Edit</a>&nbsp;
-                                            <a href="#"><i class="icon-remove"></i> Delete</a>
-                                        </td>
-                                    </tr>
-                                    <tr>
-                                        <td>AGK</td>
-                                        <td>AGL ENERGY LIMITED</td>
-                                        <td>John Doe</td>
-                                        <td>
-                                            <a href="#"><i class="icon-book"></i> View</a>&nbsp;
-                                            <a href="#"><i class="icon-edit"></i> Edit</a>&nbsp;
-                                            <a href="#"><i class="icon-remove"></i> Delete</a>
-                                        </td>
-                                    </tr>
-                                    <tr>
-                                        <td>AGO</td>
-                                        <td>ATLAS IRON LIMITED</td>
-                                        <td>John Doe</td>
-                                        <td>
-                                            <a href="#"><i class="icon-book"></i> View</a>&nbsp;
-                                            <a href="#"><i class="icon-edit"></i> Edit</a>&nbsp;
-                                            <a href="#"><i class="icon-remove"></i> Delete</a>
-                                        </td>
-                                    </tr>
-                                    </tbody>
-                                </table>
-                            </section>
-                        </div>
-                    </section>
-                </div>
-            </div>
-        </section>
+           <!-- page start-->
+           <section class="panel">
+               <header class="panel-heading">
+                   Supplier Listing
+               </header>
+               <div class="panel-body">
+                   <div class="adv-table editable-table ">
+                       <div class="space15"></div>
+                       <table class="table table-striped table-hover table-bordered" id="editable-sample">
+                           <thead>
+                           <tr>
+                                <th>ID</th>
+                                <th>Username</th>
+                                <th>Full Name</th>
+                                <th>Actions</th>
+                           </tr>
+                           </thead>
+                           <tbody>
+                            <tr class="">
+                                <td>1</td>
+                                <td>Jondi Rose</td>
+                                <td>Alfred Jondi Rose</td>
+                                <td>
+                                    <button class="btn btn-success btn-xs"><i class="icon-ok"></i></button>
+                                    <button class="btn btn-primary btn-xs"><i class="icon-pencil"></i></button>
+                                    <button class="btn btn-danger btn-xs"><i class="icon-trash "></i></button>
+                                </td>
+                            </tr>
+                           </tbody>
+                       </table>
+                   </div>
+               </div>
+           </section>
+           <!-- page end-->
+       </section>
     </section>
 </div>
 <footer><?php $this->load->view('templates/admin/includes/footer_page_view')?></footer>
 <?php $this->load->view('templates/admin/includes/footer_view')?>
-<script type="text/javascript" src="<?php echo base_url('assets/admin/js/plugins/respond.min.js')?>"></script>
-<script type="text/javascript">$(function(){ $('select.styled').customSelect(); });</script>
+<script type="text/javascript" src="<?php echo base_url('assets/admin/js/plugins/data-tables/jquery.dataTables.js')?>"></script>
+<script type="text/javascript" src="<?php echo base_url('assets/admin/js/plugins/data-tables/DT_bootstrap.js')?>"></script>
+<!--script for this page only-->
+<script src="<?php echo base_url('assets/admin/js/plugins/editable-table.js')?>"></script>
+<script type="text/javascript">$(function(){ $('select.styled').customSelect(); EditableTable.init();});</script>
 </body>
 </html>
