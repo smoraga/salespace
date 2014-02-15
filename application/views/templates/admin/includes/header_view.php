@@ -24,4 +24,4 @@
       <script src="js/html5shiv.js"></script>
       <script src="js/respond.min.js"></script>
     <![endif]-->
-    <script type="text/javascript" src="<?php echo base_url('assets/js/jquery-1.8.3.min.js')?>"></script>
+    <script type="text/javascript" src="<?php echo base_url('assets/js/jquery-1.10.1.min.js')?>"></script>

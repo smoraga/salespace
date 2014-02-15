@@ -53,6 +53,8 @@
 <script type="text/javascript" src="<?php echo base_url('assets/admin/js/plugins/data-tables/DT_bootstrap.js')?>"></script>
 <!--script for this page only-->
 <script src="<?php echo base_url('assets/admin/js/plugins/editable-table.js')?>"></script>
-<script type="text/javascript">$(function(){ $('select.styled').customSelect(); EditableTable.init();});</script>
+<script type="text/javascript">
+$(function(){ $('select.styled').customSelect(); EditableTable.init(); });
+</script>
 </body>
 </html>
