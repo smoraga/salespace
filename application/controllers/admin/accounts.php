@@ -16,4 +16,12 @@ class Accounts extends CI_Controller {
     public function buyer_listing() {
         $this->load->view('templates/admin/accounts/buyer_listing_view');
     }
+    
+    public function profile() {
+        $this->load->view('templates/admin/accounts/account_profile_view');
+    }
+    
+    public function edit() {
+        $this->load->view('templates/admin/accounts/account_profile_edit');
+    }
 }

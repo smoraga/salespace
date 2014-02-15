@@ -10,8 +10,6 @@
 <script type="text/javascript" src="<?php echo base_url('assets/admin/js/plugins/jquery.customSelect.min.js')?>" ></script>
 <script type="text/javascript" src="<?php echo base_url('assets/admin/js/plugins/respond.min.js')?>" ></script>
 
-<script type="text/javascript" class="include" src="<?php echo base_url('assets/admin/js/plugins/jquery.dcjqaccordion.2.7.js')?>"></script>
-
 <!--common script for all pages-->
 <script type="text/javascript" src="<?php echo base_url('assets/admin/js/plugins/common-scripts.js')?>"></script>
 
