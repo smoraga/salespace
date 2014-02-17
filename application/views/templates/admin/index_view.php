@@ -79,8 +79,11 @@ $(function() {
                 data: $("#signin_form").serialize(),
                 success: function(response){
                     var resp = jQuery.parseJSON(response);
-                    alert(resp.success);
-                    alert(resp.msg);
+                    if(resp.success === true){
+                        window.location.href = resp.redirect_url;
+                    } else {
+                        alert(resp.msg);
+                    }
                 },
                 error: function(jqXHR, textStatus, errorThrown){
                     alert('error');

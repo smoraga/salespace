@@ -18,7 +18,6 @@ class Authentication extends CI_Model
                           ->from('client')
 					 ->where('username', $username)
                           ->where('password', md5($password))
-                          ->where('activated', 1)
 					 ->get();
         return $query->row_array();
     }

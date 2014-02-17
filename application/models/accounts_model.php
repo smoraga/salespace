@@ -21,7 +21,6 @@ class Accounts_model extends CI_Model
     function insert_supplier($data)
     {
         $data['date_registered'] = date('Y-m-d h:i:s');
-        $data['password'] = md5($password);
         $data['status'] = $this->db->insert('client', $data);
         if($data['status'] === TRUE) {
             $data['id'] = $this->db->insert_id();
@@ -124,15 +123,34 @@ class Accounts_model extends CI_Model
      */
     function get_client($client_type = NULL, $client_id = NULL, $what = "*")
     {
-        $query = $this->db->select($what)
-                          ->from('client')
-					 ->get();
+        $this->db->select($what)
+                 ->from('client');
         
-        if(!empty($client_id)) $this->db->where('id', $client_id);
-        if(!empty($client_type)) $this->db->where('id', $client_type);
-
+        if(!empty($client_id)) $this->db->where('client.id', $client_id);
+        if(!empty($client_type)) $this->db->where('client.type', $client_type);
+        
+        $query = $this->db->get();
+        return $query->result_array();
+    }
+    
+    /*
+     * Get Client
+     * @param $client_type (optional)
+     * @param $client_id (optional)
+     * @param $what (optional)
+     * @return array
+     */
+    function get_client_full_info($client_id = NULL)
+    {
+        $query = $this->db->select('c.*, cb.company, cb.address, cb.city, cb.state, cb.zip, cb.country, cb.phone, cb.fax, f.*, c.id as id')
+                 ->from('client as c')
+                 ->join('client_billing as cb', 'cb.fk_client_id = c.id')
+                 ->join('financial as f', 'f.fk_client_id = c.id')
+                 ->where('c.id', $client_id)
+                 ->get();
         return $query->row_array();
     }
+    
     
     /*
      * Delete Client
@@ -155,6 +173,23 @@ class Accounts_model extends CI_Model
         if(empty($data)) return FALSE;
         $this->db->where('id', $data['id']);
         $this->db->update('client', $data); 
+    }
+    
+    /*
+    *  Generic Insert Client
+     * @param array $data (required)
+     * @return array
+     */
+    function generic_insert_client($data = NULL)
+    {
+        if(empty($data)) return FALSE;
+        
+        $data['date_registered'] = date('Y-m-d h:i:s');
+        $data['status'] = $this->db->insert('client', $data);
+        if($data['status'] === TRUE) {
+            $data['id'] = $this->db->insert_id();
+        }
+        return $data;
     }
 }
 ?>

@@ -68,7 +68,8 @@ class Registration extends CI_Controller {
                                     'last_name'     => $this->input->post('last_name', TRUE),
                                     'middle_name'   => $this->input->post('middle_name', TRUE),
                                     'username'      => $this->input->post('username', TRUE),
-                                    'password'      => $this->encrypt->encode($this->input->post('password', TRUE)),
+                                    //'password'      => $this->encrypt->encode($this->input->post('password', TRUE)),
+									'password'      => md5($this->input->post('password', TRUE)),
                                     'email'         => $this->input->post('email', TRUE)
             );
             
@@ -197,5 +198,11 @@ class Registration extends CI_Controller {
         if(empty($type)) echo FALSE;
         $this->session->set_userdata('client_type', $type);
         echo TRUE;
+    }
+    
+    public function a()
+    {
+        $a = $this->session->userdata('authenticated_user');
+        print_r($a);
     }
 }

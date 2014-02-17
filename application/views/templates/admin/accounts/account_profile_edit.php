@@ -14,19 +14,19 @@
                 <aside class="profile-nav col-lg-3">
                     <section class="panel">
                         <div class="user-heading round">
-                            <h1>Jonathan Smith</h1>
-                            <p>jsmith@flatlab.com</p>
+                            <h1><?php echo $client_info['first_name'].' '.$client_info['middle_name'].' '.$client_info['last_name']; ?></h1>
+                            <p><?php echo $client_info['email']; ?></p>
                         </div>
 
                         <ul class="nav nav-pills nav-stacked">
-                            <li><a href="<?php echo base_url('admin/accounts/view')?>"> <i class="icon-user"></i> Profile</a></li>
-                            <li  class="active"><a href="<?php echo base_url('admin/accounts/edit')?>"> <i class="icon-edit"></i> Edit profile</a></li>
+                            <li><a href="<?php echo base_url('admin/accounts/view/'.base64_encode($client_info['id']))?>"> <i class="icon-user"></i> Profile</a></li>
+                            <li><a href="<?php echo base_url('admin/accounts/edit/'.base64_encode($client_info['id']))?>"> <i class="icon-edit"></i> Edit profile</a></li>
                         </ul>
 
                     </section>
                 </aside>
                 <aside class="profile-info col-lg-9">
-                    <form class="form-horizontal" role="form">
+                    <form class="form-horizontal" role="form" id="account_edit_form">
                         <section class="panel">
                             <div class="bio-graph-heading"></div>
                             <div class="panel-body bio-graph-info">
@@ -35,25 +35,25 @@
                                     <div class="form-group">
                                         <label  class="col-lg-2 control-label">First Name</label>
                                         <div class="col-lg-6">
-                                            <input type="text" name="first_name" attr-name="Firstname" class="form-control" placeholder=" " />
+                                            <input type="text" name="first_name" attr-name="Firstname" value="<?php echo $client_info['first_name']; ?>" class="form-control" placeholder=" " />
                                         </div>
                                     </div>
                                     <div class="form-group">
                                         <label  class="col-lg-2 control-label">Last Name</label>
                                         <div class="col-lg-6">
-                                            <input type="text" name="last_name" attr-name="Last Name" class="form-control" placeholder=" " />
+                                            <input type="text" name="last_name" attr-name="Last Name" value="<?php echo $client_info['last_name']; ?>" class="form-control" placeholder=" " />
                                         </div>
                                     </div>
                                     <div class="form-group">
                                         <label  class="col-lg-2 control-label">Middle Name</label>
                                         <div class="col-lg-6">
-                                            <input type="text" name="middle_name" attr-name="Middle Name" class="form-control" placeholder=" " />
+                                            <input type="text" name="middle_name" attr-name="Middle Name" value="<?php echo $client_info['middle_name']; ?>" class="form-control" placeholder=" " />
                                         </div>
                                     </div>
                                     <div class="form-group">
                                         <label  class="col-lg-2 control-label">Email</label>
                                         <div class="col-lg-6">
-                                            <input type="text" name="email" attr-name="Email" class="form-control" placeholder=" " />
+                                            <input type="text" name="email" attr-name="Email" value="<?php echo $client_info['email']; ?>" class="form-control" placeholder=" " />
                                         </div>
                                     </div>
                             </div>
@@ -65,13 +65,13 @@
                                     <div class="form-group">
                                         <label  class="col-lg-2 control-label">Company</label>
                                         <div class="col-lg-6">
-                                            <input type="text" name="company" class="form-control" attr-name="Company" placeholder=" " />
+                                            <input type="text" name="company" class="form-control" attr-name="Company" value="<?php echo $client_info['company']; ?>" placeholder=" " />
                                         </div>
                                     </div>
                                     <div class="form-group">
                                         <label  class="col-lg-2 control-label">Address</label>
                                         <div class="col-lg-6">
-                                            <input type="text" name="address" class="form-control" attr-name="Address" placeholder=" " />
+                                            <input type="text" name="address" class="form-control" attr-name="Address" value="<?php echo $client_info['address']; ?>" placeholder=" " />
                                         </div>
                                     </div>
                                     <div class="form-group">
@@ -88,7 +88,7 @@
                                             <select name="state">
                                                 <option>- Choose -</option>
                                                 <?php foreach($states as $state):?>
-                                                <option><?php echo $state->state?></option>
+                                                <option <?php echo ($client_info['state'] == $state->state) ? 'selected="selected"' : ''; ?> value="<?php echo $state->state?>"><?php echo $state->state?></option>
                                                 <?php endforeach?>
                                             </select>
                                         </div>
@@ -99,7 +99,7 @@
                                             <select name="city">
                                                 <option>- Chooose -</option>
                                                 <?php foreach($cities as $city):?>
-                                                <option><?php echo $city->city?></option>
+                                                <option <?php echo ($client_info['city'] == $city->city) ? 'selected="selected"' : ''; ?> value="<?php echo $city->city?>"><?php echo $city->city?></option>
                                                 <?php endforeach?>
                                             </select>
                                         </div>
@@ -107,19 +107,19 @@
                                     <div class="form-group">
                                         <label  class="col-lg-2 control-label">Zip</label>
                                         <div class="col-lg-6">
-                                            <input type="text" name="zip" class="form-control" attr-name="Zip" placeholder=" " />
+                                            <input type="text" name="zip" class="form-control" attr-name="Zip" value="<?php echo $client_info['zip']; ?>" placeholder=" " />
                                         </div>
                                     </div>
                                     <div class="form-group">
                                         <label  class="col-lg-2 control-label">Phone</label>
                                         <div class="col-lg-6">
-                                            <input type="text" name="phone" class="form-control" attr-name="Phone" placeholder=" " />
+                                            <input type="text" name="phone" class="form-control" attr-name="Phone" value="<?php echo $client_info['phone']; ?>" placeholder=" " />
                                         </div>
                                     </div>
                                     <div class="form-group">
                                         <label  class="col-lg-2 control-label">FAX</label>
                                         <div class="col-lg-6">
-                                            <input type="text" name="fax" class="form-control" placeholder=" " />
+                                            <input type="text" name="fax" class="form-control" value="<?php echo $client_info['fax']; ?>" placeholder=" "/>
                                         </div>
                                     </div>
                             </div>
@@ -132,46 +132,46 @@
                                         <div class="form-group">
                                             <label  class="col-lg-2 control-label">Tin Number</label>
                                             <div class="col-lg-6">
-                                                <input type="text" name="tin" class="form-control" attr-name="Tin Number" placeholder=" " />
+                                                <input type="text" name="tin" class="form-control" attr-name="Tin Number" value="<?php echo $client_info['tin_number']; ?>" placeholder=" " />
                                             </div>
                                         </div>
                                         <div class="form-group">
                                             <label  class="col-lg-2 control-label">Company Name</label>
                                             <div class="col-lg-6">
-                                                <input type="text" name="company" class="form-control" attr-name="Company" placeholder=" " />
+                                                <input type="text" name="company" class="form-control" attr-name="Company" value="<?php echo $client_info['company_name']; ?>" placeholder=" " />
                                             </div>
                                         </div>
                                         <div class="form-group">
                                             <label  class="col-lg-2 control-label">Company Address</label>
                                             <div class="col-lg-6">
-                                                <input type="text" name="company_address" class="form-control" attr-name="Company Address" placeholder=" " />
+                                                <input type="text" name="company_address" class="form-control" attr-name="Company Address" value="<?php echo $client_info['company_address']; ?>" placeholder=" " />
                                             </div>
                                         </div>
                                         <div class="form-group">
                                             <label  class="col-lg-2 control-label">Company Phone</label>
                                             <div class="col-lg-6">
-                                                <input type="text" name="company_phone" class="form-control" attr-name="Company Phone" placeholder=" ">
+                                                <input type="text" name="company_phone" class="form-control" attr-name="Company Phone" value="<?php echo $client_info['company_phone']; ?>" placeholder=" ">
                                             </div>
                                         </div>
                                         <div class="form-group">
                                             <label  class="col-lg-2 control-label">Company FAX</label>
                                             <div class="col-lg-6">
-                                                <input type="text" name="company_fax" class="form-control" attr-name="Company Fax" placeholder=" " />
+                                                <input type="text" name="company_fax" class="form-control" attr-name="Company Fax" value="<?php echo $client_info['company_fax']; ?>" placeholder=" " />
                                             </div>
                                         </div>
                                         <div class="form-group">
                                             <label  class="col-lg-2 control-label">SEC Number</label>
                                             <div class="col-lg-6">
-                                                <input type="text" name="sec_number" class="form-control" attr-name="SEC Number" placeholder=" " />
+                                                <input type="text" name="sec_number" class="form-control" attr-name="SEC Number" value="<?php echo $client_info['sec_number']; ?>" placeholder=" " />
                                             </div>
                                         </div>
                                         <div class="form-group">
                                             <label  class="col-lg-2 control-label">Company Email</label>
                                             <div class="col-lg-6">
-                                                <input type="text" name="company_email" class="form-control" attr-name="Company Email" placeholder=" " />
+                                                <input type="text" name="company_email" class="form-control" attr-name="Company Email" value="<?php echo $client_info['company_email']; ?>" placeholder=" " />
                                             </div>
                                         </div>
-                                        <input type="hidden" name="count" value="" id="" />
+                                        <input type="text" name="client_id" value="<?php echo $client_info['id']; ?>" style="display:none;"/>
                                         <div class="form-group">
                                             <div class="col-lg-offset-2 col-lg-10">
                                                 <input type="submit" name="submit" value="Save" class="btn btn-success" />
@@ -256,10 +256,24 @@ $(function() {
             /*
              * Call AJAX if success
              */
-            console.log('success');
-        } else {
-            return false;
+            $.ajax({
+                url: "<?php echo base_url(); ?>admin/accounts/add_client_account",
+                type: "POST",
+                data: $("#account_edit_form").serialize(),
+                success: function(response){
+                    var resp = jQuery.parseJSON(response);
+                    if(resp.success === true) {
+                        alert('Account Successfully Updated');
+                    } else {
+                        alert("Can't update at this moment.");
+                    }
+                },
+                error: function(jqXHR, textStatus, errorThrown){
+                    alert('error');
+                }
+            });
         }
+        return false;
     });
 });
 </script>

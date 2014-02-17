@@ -14,7 +14,7 @@ class Dashboard extends CI_Controller {
         $this->load->view("templates/admin/dashboard_view");
     }
 	
-	public function login()
+    public function login()
     {
         $this->load->helper(array('form'));
         $this->load->library('form_validation');
@@ -43,18 +43,22 @@ class Dashboard extends CI_Controller {
             
             if(!empty($return)) {
                 $data['success'] = TRUE;
+                $data['redirect_url'] = base_url().'admin/accounts/supplier_listing';
                 $data['msg'] = "user authenticated";
+                
+                $session_data['authenticated_user'] = array(
+                    'username' => $username,
+                    'full_name' => $return['first_name'].' '.$return['last_name']
+                );
+                $this->session->set_userdata($session_data);
             }
           }
         }
         echo json_encode($data);
     }
-    
-    public function logout() {
+	
+	public function logout() {
         $this->session->sess_destroy();
         redirect(base_url()."admin/dashboard");
     }
 }
-
-/* End of file welcome.php */
-/* Location: ./application/controllers/welcome.php */

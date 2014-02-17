@@ -22,9 +22,10 @@ else:
             </li>
             <!-- user login dropdown start-->
             <li class="dropdown">
+                <?php $auth_user = $this->session->userdata('authenticated_user'); ?>
                 <a data-toggle="dropdown" class="dropdown-toggle" href="#">
                     <img alt="" src="<?php echo base_url('assets/admin/img/avatar1_small.jpg')?>">
-                    <span class="username">Jhon Doue</span>
+                    <span class="username"><?php echo $auth_user['username']; ?></span>
                     <b class="caret"></b>
                 </a>
                 <ul class="dropdown-menu extended logout">

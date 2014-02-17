@@ -12,7 +12,7 @@
             <!-- page start-->
             <div class="row">
                 <aside class="profile-info col-lg-10">
-                    <form class="form-horizontal" role="form">
+                    <form class="form-horizontal" role="form" id="account_add_form">
                         <section class="panel">
                             <div class="bio-graph-heading"></div>
                             <div class="panel-body bio-graph-info">
@@ -242,10 +242,24 @@ $(function() {
             /*
              * Call AJAX if success
              */
-            console.log('success');
-        } else {
-            return false;
+            $.ajax({
+                url: "<?php echo base_url(); ?>admin/accounts/add_client_account",
+                type: "POST",
+                data: $("#account_add_form").serialize(),
+                success: function(response){
+                    var resp = jQuery.parseJSON(response);
+                    if(resp.success === true) {
+                        alert('Account Successfully Added');
+                    } else {
+                        alert("Can't add at this moment.");
+                    }
+                },
+                error: function(jqXHR, textStatus, errorThrown){
+                    alert('error');
+                }
+            });
         }
+        return false;
     });
 });
 </script>
