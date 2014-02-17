@@ -111,4 +111,12 @@ class Accounts extends CI_Controller {
         }
         echo json_encode($data);
     }
+    
+    public function delete_client_account()
+    {
+        $client_id = base64_decode($this->input->post('client_id'));
+        $data['success'] = TRUE;
+        $this->global_model->generic_delete('client', 'id', $client_id);
+        echo json_encode($data);
+    }
 }

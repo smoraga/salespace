@@ -92,7 +92,23 @@
             }
             var oTR = $(this).parent().parent();
             $("#supplier_tbl").dataTable().fnDeleteRow(oTR[0]); 
-            //alert($(this).attr('id'));
+            
+            $.ajax({
+                url: "<?php echo base_url(); ?>admin/accounts/delete_client_account",
+                type: "POST",
+                data: {client_id: $(this).attr('id')},
+                success: function(response){
+                    var resp = jQuery.parseJSON(response);
+                    if(resp.success === true) {
+
+                    } else {
+                        alert("Can't delete at this moment");
+                    }
+                },
+                error: function(jqXHR, textStatus, errorThrown){
+                    alert('error');
+                }
+            });
         }
         
         if(process == 'View') {

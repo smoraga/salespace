@@ -24,6 +24,19 @@ class Global_model extends CI_Model
         if(empty($id) && empty($table) && empty($data)) return FALSE;
         $this->db->where('id', $id);
         return $this->db->update($table, $data);
-    }    
+    }
+    
+    /*
+     * Generic Delete
+     * @param string $table (required)
+     * @param string $field (required)
+     * @param string $value (required)
+     * @return boolean
+     */
+    function generic_delete($table = NULL, $field = NULL, $value = NULL)
+    {
+        if(empty($table) && empty($field) && empty($value)) return FALSE;
+        $this->db->delete($table, array($field => $value));
+    }
 }
 ?>
