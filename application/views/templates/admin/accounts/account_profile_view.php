@@ -14,15 +14,12 @@
                 <aside class="profile-nav col-lg-3">
                     <section class="panel">
                         <div class="user-heading round">
-                            <a href="#">
-                                <img src="<?php echo base_url('assets/admin/img/profile-avatar.jpg')?>" alt="">
-                            </a>
                             <h1>Jonathan Smith</h1>
                             <p>jsmith@flatlab.com</p>
                         </div>
 
                         <ul class="nav nav-pills nav-stacked">
-                            <li class="active"><a href="<?php echo base_url('admin/accounts/profile')?>"> <i class="icon-user"></i> Profile</a></li>
+                            <li class="active"><a href="<?php echo base_url('admin/accounts/view')?>"> <i class="icon-user"></i> Profile</a></li>
                             <li><a href="<?php echo base_url('admin/accounts/edit')?>"> <i class="icon-edit"></i> Edit profile</a></li>
                         </ul>
 
@@ -32,7 +29,7 @@
                     <section class="panel">
                         <div class="bio-graph-heading"></div>
                         <div class="panel-body bio-graph-info">
-                            <h1>Bio Graph</h1>
+                            <h2>Client Information</h2>
                             <div class="row">
                                 <div class="bio-row">
                                     <p><span>First Name </span>: Jonathan</p>
@@ -41,22 +38,70 @@
                                     <p><span>Last Name </span>: Smith</p>
                                 </div>
                                 <div class="bio-row">
-                                    <p><span>Country </span>: Australia</p>
-                                </div>
-                                <div class="bio-row">
-                                    <p><span>Birthday</span>: 13 July 1983</p>
-                                </div>
-                                <div class="bio-row">
-                                    <p><span>Occupation </span>: UI Designer</p>
+                                    <p><span>Middle Name </span>: Smith</p>
                                 </div>
                                 <div class="bio-row">
                                     <p><span>Email </span>: jsmith@flatlab.com</p>
                                 </div>
+                            </div>
+                        </div>
+                    </section>
+                    <section>
+                        <div class="panel panel-primary">
+                            <div class="bio-graph-heading"></div>
+                            <div class="panel-body">
+                            <h2>Billing Information</h2>
+                            <div class="row">
                                 <div class="bio-row">
-                                    <p><span>Mobile </span>: (12) 03 4567890</p>
+                                    <p><span>Company </span>: Filament</p>
                                 </div>
                                 <div class="bio-row">
-                                    <p><span>Phone </span>: 88 (02) 123456</p>
+                                    <p><span>Address </span>: 123 block st.</p>
+                                </div>
+                                <div class="bio-row">
+                                    <p><span>Country </span>: Philippines</p>
+                                </div>
+                                <div class="bio-row">
+                                    <p><span>State </span>: NCR</p>
+                                </div>
+                                <div class="bio-row">
+                                    <p><span>City </span>: Makati</p>
+                                </div>
+                                <div class="bio-row">
+                                    <p><span>Zip</span>: Makati</p>
+                                </div>
+                                <div class="bio-row">
+                                    <p><span>Phone </span>: 1234567</p>
+                                </div>
+                                <div class="bio-row">
+                                    <p><span>FAX </span>: 1234567</p>
+                                </div>
+                            </div>
+                        </div>
+                    </section>
+                    <section>
+                        <div class="panel panel-primary">
+                            <div class="bio-graph-heading"></div>
+                            <div class="panel-body">
+                            <h2>Financial Information</h2>
+                            <div class="row">
+                                <div class="bio-row">
+                                    <p><span>Tin Number </span>: Jonathan</p>
+                                </div>
+                                <div class="bio-row">
+                                    <p><span>Company Name </span>: Smith</p>
+                                </div>
+                                <div class="bio-row">
+                                    <p><span>Company Address </span>: Australia</p>
+                                </div>
+                                <div class="bio-row">
+                                    <p><span>Company Phone </span>: jsmith@flatlab.com</p>
+                                </div>
+                                <div class="bio-row">
+                                    <p><span>Company FAX </span>: (12) 03 4567890</p>
+                                </div>
+                                <div class="bio-row">
+                                    <p><span>SEC Number </span>: (12) 03 4567890</p>
                                 </div>
                             </div>
                         </div>

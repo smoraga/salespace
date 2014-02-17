@@ -9,7 +9,7 @@
             
             <form id="reg_financial_form">
                 <label>Tin Number</label>
-                <input type="text" name="tin" value="" attr-name="Tin" />
+                <input type="text" name="tin" value="" attr-name="Tin Number" />
                 <div class="clr"></div>
                 
                 <label>Company Name</label>

@@ -62,7 +62,7 @@
                             <div class="best-seller">
                                 <article class="media">
                                     <a class="pull-left thumb p-thumb">
-                                        <img src="<?php echo base_url('assets/img/product1.jpg')?>">
+                                        <img src="<?php echo base_url('assets/admin/img/product1.jpg')?>">
                                     </a>
                                     <div class="media-body">
                                         <a href="#" class=" p-head">Item One Tittle</a>
@@ -71,7 +71,7 @@
                                 </article>
                                 <article class="media">
                                     <a class="pull-left thumb p-thumb">
-                                        <img src="<?php echo base_url('assets/img/product2.png')?>">
+                                        <img src="<?php echo base_url('assets/admin/img/product2.png')?>">
                                     </a>
                                     <div class="media-body">
                                         <a href="#" class=" p-head">Item Two Tittle</a>
@@ -80,7 +80,7 @@
                                 </article>
                                 <article class="media">
                                     <a class="pull-left thumb p-thumb">
-                                        <img src="<?php echo base_url('assets/img/product3.png')?>">
+                                        <img src="<?php echo base_url('assets/admin/img/product3.png')?>">
                                     </a>
                                     <div class="media-body">
                                         <a href="#" class=" p-head">Item Three Tittle</a>
@@ -123,7 +123,7 @@
                                     <li><a href="#">1</a></li>
                                     <li><a href="#">2</a></li>
                                     <li><a href="#">3</a></li>
-                                    <li><a href="#">»</a></li>
+                                    <li><a href="#">ï¿½</a></li>
                                 </ul>
                             </div>
                         </div>
@@ -133,7 +133,7 @@
                         <div class="col-md-4">
                             <section class="panel">
                                 <div class="pro-img-box">
-                                    <img src="<?php echo base_url('assets/img/product-list/pro-1.jpg')?>" alt=""/>
+                                    <img src="<?php echo base_url('assets/admin/img/product-list/pro-1.jpg')?>" alt=""/>
                                     <a href="#" class="adtocart">
                                         <i class="icon-shopping-cart"></i>
                                     </a>
@@ -152,7 +152,7 @@
                         <div class="col-md-4">
                             <section class="panel">
                                 <div class="pro-img-box">
-                                    <img src="<?php echo base_url('assets/img/product-list/pro1.jpg')?>" alt=""/>
+                                    <img src="<?php echo base_url('assets/admin/img/product-list/pro1.jpg')?>" alt=""/>
                                     <a href="#" class="adtocart">
                                         <i class="icon-shopping-cart"></i>
                                     </a>
@@ -171,7 +171,7 @@
                         <div class="col-md-4">
                             <section class="panel">
                                 <div class="pro-img-box">
-                                    <img src="<?php echo base_url('assets/img/product-list/pro2.jpg')?>" alt=""/>
+                                    <img src="<?php echo base_url('assets/admin/img/product-list/pro2.jpg')?>" alt=""/>
                                     <a href="#" class="adtocart">
                                         <i class="icon-shopping-cart"></i>
                                     </a>
@@ -190,7 +190,7 @@
                         <div class="col-md-4">
                             <section class="panel">
                                 <div class="pro-img-box">
-                                    <img src="<?php echo base_url('assets/img/product-list/pro3.jpg')?>" alt=""/>
+                                    <img src="<?php echo base_url('assets/admin/img/product-list/pro3.jpg')?>" alt=""/>
                                     <a href="#" class="adtocart">
                                         <i class="icon-shopping-cart"></i>
                                     </a>
@@ -209,7 +209,7 @@
                         <div class="col-md-4">
                             <section class="panel">
                                 <div class="pro-img-box">
-                                    <img src="<?php echo base_url('assets/img/product-list/pro-1.jpg')?>" alt=""/>
+                                    <img src="<?php echo base_url('assets/admin/img/product-list/pro-1.jpg')?>" alt=""/>
                                     <a href="#" class="adtocart">
                                         <i class="icon-shopping-cart"></i>
                                     </a>
@@ -228,7 +228,7 @@
                         <div class="col-md-4">
                             <section class="panel">
                                 <div class="pro-img-box">
-                                    <img src="<?php echo base_url('assets/img/product-list/pro2.jpg')?>" alt=""/>
+                                    <img src="<?php echo base_url('assets/admin/img/product-list/pro2.jpg')?>" alt=""/>
                                     <a href="#" class="adtocart">
                                         <i class="icon-shopping-cart"></i>
                                     </a>
@@ -247,7 +247,7 @@
                         <div class="col-md-4">
                             <section class="panel">
                                 <div class="pro-img-box">
-                                    <img src="<?php echo base_url('assets/img/product-list/pro1.jpg')?>" alt=""/>
+                                    <img src="<?php echo base_url('assets/admin/img/product-list/pro1.jpg')?>" alt=""/>
                                     <a href="#" class="adtocart">
                                         <i class="icon-shopping-cart"></i>
                                     </a>
@@ -266,7 +266,7 @@
                         <div class="col-md-4">
                             <section class="panel">
                                 <div class="pro-img-box">
-                                    <img src="<?php echo base_url('assets/img/product-list/pro3.jpg')?>" alt=""/>
+                                    <img src="<?php echo base_url('assets/admin/img/product-list/pro3.jpg')?>" alt=""/>
                                     <a href="#" class="adtocart">
                                         <i class="icon-shopping-cart"></i>
                                     </a>
@@ -285,7 +285,7 @@
                         <div class="col-md-4">
                             <section class="panel">
                                 <div class="pro-img-box">
-                                    <img src="<?php echo base_url('assets/img/product-list/pro-1.jpg')?>" alt=""/>
+                                    <img src="<?php echo base_url('assets/admin/img/product-list/pro-1.jpg')?>" alt=""/>
                                     <a href="#" class="adtocart">
                                         <i class="icon-shopping-cart"></i>
                                     </a>

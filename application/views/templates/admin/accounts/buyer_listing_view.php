@@ -33,7 +33,7 @@
                                 <td>Jondi Rose</td>
                                 <td>Alfred Jondi Rose</td>
                                 <td>
-                                    <button class="btn btn-success btn-xs"><i class="icon-ok"></i></button>
+                                    <button id="view-profile" class="btn btn-success btn-xs"><i class="icon-book"></i></button>
                                     <button class="btn btn-primary btn-xs"><i class="icon-pencil"></i></button>
                                     <button class="btn btn-danger btn-xs"><i class="icon-trash "></i></button>
                                 </td>
@@ -53,6 +53,14 @@
 <script type="text/javascript" src="<?php echo base_url('assets/admin/js/plugins/data-tables/DT_bootstrap.js')?>"></script>
 <!--script for this page only-->
 <script src="<?php echo base_url('assets/admin/js/plugins/editable-table.js')?>"></script>
-<script type="text/javascript">$(function(){ $('select.styled').customSelect(); EditableTable.init();});</script>
+<script type="text/javascript">
+$(function(){ 
+    $('select.styled').customSelect(); 
+    EditableTable.init();
+    
+    $('#view-profile').click(function() {
+        location.href = ("<?php echo base_url('admin/accounts/view')?>");
+    });
+});</script>
 </body>
 </html>

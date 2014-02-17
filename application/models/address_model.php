@@ -17,4 +17,13 @@ class Address_model extends CI_Model {
         
         return $query->result();
     }
+    
+    function get_all_state($what = '*') {
+        $query = $this->db->distinct()
+                            ->select('state')
+                            ->from('postal_city_state_region')
+                            ->get();
+        
+        return $query->result();
+    }
 }

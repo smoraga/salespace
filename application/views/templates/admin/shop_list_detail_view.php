@@ -63,7 +63,7 @@
                             <div class="best-seller">
                                 <article class="media">
                                     <a class="pull-left thumb p-thumb">
-                                        <img src="<?php echo base_url('assets/img/product1.jpg')?>">
+                                        <img src="<?php echo base_url('assets/admin/img/product1.jpg')?>">
                                     </a>
                                     <div class="media-body">
                                         <a href="#" class=" p-head">Item One Tittle</a>
@@ -72,7 +72,7 @@
                                 </article>
                                 <article class="media">
                                     <a class="pull-left thumb p-thumb">
-                                        <img src="<?php echo base_url('assets/img/product2.png')?>">
+                                        <img src="<?php echo base_url('assets/admin/img/product2.png')?>">
                                     </a>
                                     <div class="media-body">
                                         <a href="#" class=" p-head">Item Two Tittle</a>
@@ -81,7 +81,7 @@
                                 </article>
                                 <article class="media">
                                     <a class="pull-left thumb p-thumb">
-                                        <img src="<?php echo base_url('assets/img/product3.png')?>">
+                                        <img src="<?php echo base_url('assets/admin/img/product3.png')?>">
                                     </a>
                                     <div class="media-body">
                                         <a href="#" class=" p-head">Item Three Tittle</a>
@@ -98,20 +98,20 @@
                         <div class="panel-body">
                             <div class="col-md-6">
                                 <div class="pro-img-details">
-                                    <img src="<?php echo base_url('assets/img/product-list/pro-thumb-big.jpg')?>" alt=""/>
+                                    <img src="<?php echo base_url('assets/admin/img/product-list/pro-thumb-big.jpg')?>" alt=""/>
                                 </div>
                                 <div class="pro-img-list">
                                     <a href="#">
-                                        <img src="<?php echo base_url('assets/img/product-list/pro-thumb-1.jpg')?>" alt="">
+                                        <img src="<?php echo base_url('assets/admin/img/product-list/pro-thumb-1.jpg')?>" alt="">
                                     </a>
                                     <a href="#">
-                                        <img src="<?php echo base_url('assets/img/product-list/pro-thumb-2.jpg')?>" alt="">
+                                        <img src="<?php echo base_url('assets/admin/img/product-list/pro-thumb-2.jpg')?>" alt="">
                                     </a>
                                     <a href="#">
-                                        <img src="<?php echo base_url('assets/img/product-list/pro-thumb-3.jpg')?>" alt="">
+                                        <img src="<?php echo base_url('assets/admin/img/product-list/pro-thumb-3.jpg')?>" alt="">
                                     </a>
                                     <a href="#">
-                                        <img src="<?php echo base_url('assets/img/product-list/pro-thumb-1.jpg')?>" alt="">
+                                        <img src="<?php echo base_url('assets/admin/img/product-list/pro-thumb-1.jpg')?>" alt="">
                                     </a>
                                 </div>
                             </div>

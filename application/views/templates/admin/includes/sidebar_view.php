@@ -20,6 +20,8 @@
                         <li><a href="<?php echo base_url('admin/accounts/buyer_listing')?>">Buyer</a></li>
                     </ul>
                 </li>
+                <?php 
+                /*
                 <li class="sub-menu">
                     <a href="javascript:;" >
                         <i class="icon-shopping-cart"></i>
@@ -36,11 +38,12 @@
                         <span>Extra</span>
                     </a>
                     <ul class="sub">
-                        <li><a  href="<?php echo base_url('admin/profile')?>">Profile</a></li>
                         <li><a  href="invoice.html">Invoice</a></li>
                         <li><a  href="search_result.html">Search Result</a></li>
                     </ul>
                 </li>
+                 */
+                ?>
             </ul>
             <!-- sidebar menu end-->
         </div>

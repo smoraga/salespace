@@ -20,6 +20,15 @@
                     <option selected="selected" value="Philippines">Philippines</option>
                 </select>
                 <div class="clr"></div>
+                
+                <label>State</label>
+                <select name="state">
+                    <option>- Choose -</option>
+                    <?php foreach($states as $state):?>
+                    <option><?php echo $state->state?></option>
+                    <?php endforeach?>
+                </select>
+                <div class="clr"></div>
 
                 <label>City</label>
                 <select name="city">
@@ -28,10 +37,6 @@
                     <option><?php echo $city->city?></option>
                     <?php endforeach?>
                 </select>
-                <div class="clr"></div>
-                
-                <label>State</label>
-                <input type="text" name="state" value="" attr-name="State" />
                 <div class="clr"></div>
 
                 <label>Zip</label>

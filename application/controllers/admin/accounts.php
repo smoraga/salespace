@@ -17,11 +17,16 @@ class Accounts extends CI_Controller {
         $this->load->view('templates/admin/accounts/buyer_listing_view');
     }
     
-    public function profile() {
+    public function view() {
         $this->load->view('templates/admin/accounts/account_profile_view');
     }
     
     public function edit() {
-        $this->load->view('templates/admin/accounts/account_profile_edit');
+        $this->load->model('address_model');
+        
+        $data['cities'] = $this->address_model->get_all_city();
+        $data['states'] = $this->address_model->get_all_state();
+        
+        $this->load->view('templates/admin/accounts/account_profile_edit', $data);
     }
 }

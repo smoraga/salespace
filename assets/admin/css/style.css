@@ -2073,7 +2073,7 @@ ul.inbox-pagination li {
     color: #89817e;
 }
 
-.bio-graph-info h1 {
+.bio-graph-info h1, .bio-graph-info h2 {
     font-size: 22px;
     font-weight: 300;
     margin: 0 0 20px;
