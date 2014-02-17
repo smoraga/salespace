@@ -49,6 +49,11 @@ class Dashboard extends CI_Controller {
         }
         echo json_encode($data);
     }
+    
+    public function logout() {
+        $this->session->sess_destroy();
+        redirect(base_url()."admin/dashboard");
+    }
 }
 
 /* End of file welcome.php */
