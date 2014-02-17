@@ -16,6 +16,7 @@
                    Buyer Listing
                </header>
                <div class="panel-body">
+                   <a href="<?php echo base_url('admin/accounts/add')?>" class="btn btn-primary">Add User</a> 
                    <div class="adv-table editable-table ">
                        <div class="space15"></div>
                        <table class="table table-striped table-hover table-bordered" id="editable-sample">
