@@ -16,10 +16,6 @@ else:
     
     <div class="top-nav ">
         <!--search & user info start-->
-        <ul class="nav pull-right top-menu">
-            <li>
-                <input type="text" class="form-control search" placeholder="Search">
-            </li>
             <!-- user login dropdown start-->
             <li class="dropdown">
                 <?php $auth_user = $this->session->userdata('authenticated_user'); ?>
