@@ -252,7 +252,7 @@ $(function() {
             $('input[type="hidden"]').val(error);
         } 
         
-        if(input_error == 1) {
+        if(input_error == 0) {
             /*
              * Call AJAX if success
              */
