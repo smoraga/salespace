@@ -3,8 +3,6 @@
 class Dashboard extends CI_Controller {
     public function __construct() {
         parent::__construct();
-        
-        if($this->session->userdata('authenticated_user') === FALSE) redirect(base_url().'admin/dashboard');
     }
     
     public function index()
@@ -13,6 +11,7 @@ class Dashboard extends CI_Controller {
     }
     
     public function home() {
+        if($this->session->userdata('authenticated_user') === FALSE) redirect(base_url().'admin/dashboard');
         $this->load->view("templates/admin/dashboard_view");
     }
 	
