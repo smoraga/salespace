@@ -3,6 +3,26 @@
 class Global_model extends CI_Model
 {    
     /*
+     * Generic Select
+     * @param string $table (required)
+     * @param string $where_field (required)
+     * @param string $where_value (required)
+     * return max
+     */
+    function generic_select($table = NULL, $where_field = NULL, $where_value = NULL, $what = "*")
+    {
+        if(empty($table)) return FALSE;
+        
+        $this->db->select($what)
+                 ->from($table);
+        
+        if(!empty($where_field) && !empty($where_field)) $this->db->where($where_field, $where_value);
+        
+        $query = $this->db->get();
+        return $query->result_array();
+    }
+
+    /*
      * Generic Insert
      * @param string $table (required)
      * @param array $data (required)
