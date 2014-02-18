@@ -23,7 +23,7 @@ class Configuration extends CI_Controller {
         $data = array( 
             'value' => $this->input->post('config_value', TRUE),
         );
-        $data['success'] = $configs = $this->global_model->generic_update($id, 'configurations', $data);
+        $data['success'] = $configs = $this->global_model->generic_update('id', $id, 'configurations', $data);
         echo json_encode($data);        
     }
 }

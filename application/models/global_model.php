@@ -43,10 +43,10 @@ class Global_model extends CI_Model
      * @param string $table (required)
      * @param array $data (required)
      */
-    public function generic_update($id = NULL, $table = NULL, $data = NULL)
+    public function generic_update($where_field = NULL, $where_value = NULL, $table = NULL, $data = NULL)
     {
         if(empty($id) && empty($table) && empty($data)) return FALSE;
-        $this->db->where('id', $id);
+        $this->db->where($where_field, $where_value);
         return $this->db->update($table, $data);
     }
     

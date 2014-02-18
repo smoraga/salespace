@@ -89,9 +89,9 @@ class Accounts extends CI_Controller {
         );
         
         if($client_id) {
-            $client_status = $this->global_model->generic_update($client_id, 'client', $client_info);
-            $client_billing_status = $this->global_model->generic_update($client_id, 'client_billing', $billing_info);
-            $financial_status = $this->global_model->generic_update($client_id, 'financial', $financial_info);
+            $client_status = $this->global_model->generic_update('id', $client_id, 'client', $client_info);
+            $client_billing_status = $this->global_model->generic_update('fk_client_id', $client_id, 'client_billing', $billing_info);
+            $financial_status = $this->global_model->generic_update('fk_client_id', $client_id, 'financial', $financial_info);
         } else {
             $client_status_info = $this->accounts_model->generic_insert_client($client_info);
             $client_status = $client_status_info['status'];
