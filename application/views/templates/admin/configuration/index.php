@@ -22,6 +22,7 @@
                            <tr>
                                 <th>ID</th>
                                 <th>Configuration Name</th>
+                                <th>Value</th>
                                 <th>Actions</th>
                            </tr>
                            </thead>
@@ -31,6 +32,7 @@
                             <tr class="">
                                 <td><?php echo $v['id']; ?></td>
                                 <td><?php echo $v['label']; ?></td>
+                                <td><?php echo $v['value']; ?></td>
                                 <td>
                                     <button class="btn btn-primary btn-xs" id="<?php echo $id; ?>" title="Edit"><i class="icon-pencil"></i></button>
                                 </td>

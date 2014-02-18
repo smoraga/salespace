@@ -21,7 +21,7 @@
                     </ul>
                 </li>
                 <li>
-                    <a class="active" href="<?php echo base_url('admin/configurations')?>">
+                    <a href="<?php echo base_url('admin/configuration/')?>">
                         <i class="icon-cogs"></i>
                         <span>Configuration</span>
                     </a>

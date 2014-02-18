@@ -13,6 +13,7 @@
             <div class="row">
                 <aside class="profile-info col-lg-9">
                     <form class="form-horizontal" role="form" id="configuration_edit_form">
+                        <input type="hidden" name="id" value="<?php echo base64_encode($configuration_info['id']); ?>"/>
                         <section class="panel">
                             <div class="bio-graph-heading"></div>
                             <div class="panel-body bio-graph-info">
@@ -32,7 +33,7 @@
                                 <div class="form-group">
                                     <div class="col-lg-offset-2 col-lg-10">
                                         <input type="submit" name="submit" value="Save" class="btn btn-success" />
-                                        <a class="btn btn-primary">Cancel</a>
+                                        <a class="btn btn-primary" href="<?php echo base_url(); ?>admin/configuration">Cancel</a>
                                     </div>
                                 </div>
                             </div>
