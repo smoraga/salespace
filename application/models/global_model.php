@@ -16,7 +16,11 @@ class Global_model extends CI_Model
         $this->db->select($what)
                  ->from($table);
         
-        if(!empty($where_field) && !empty($where_field)) $this->db->where($where_field, $where_value);
+        if(!empty($where_field) && !empty($where_value)) {
+            $this->db->where($where_field, $where_value);
+            $query = $this->db->get();
+            return $query->row_array();
+        }
         
         $query = $this->db->get();
         return $query->result_array();
