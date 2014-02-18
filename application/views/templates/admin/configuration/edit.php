@@ -33,6 +33,7 @@
                                 <div class="form-group">
                                     <div class="col-lg-offset-2 col-lg-10">
                                         <input type="submit" name="submit" value="Save" class="btn btn-success" />
+                                        <a class="btn btn-primary">Cancel</a>
                                     </div>
                                 </div>
                             </div>
