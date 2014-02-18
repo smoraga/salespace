@@ -20,6 +20,12 @@
                         <li><a href="<?php echo base_url('admin/accounts/buyer_listing')?>">Buyer</a></li>
                     </ul>
                 </li>
+                <li>
+                    <a class="active" href="<?php echo base_url('admin/configurations')?>">
+                        <i class="icon-cogs"></i>
+                        <span>Configuration</span>
+                    </a>
+                </li>
                 <?php 
                 /*
                 <li class="sub-menu">
