@@ -21,6 +21,7 @@
                         <ul class="nav nav-pills nav-stacked">
                             <li><a href="<?php echo base_url('admin/accounts/view/'.base64_encode($client_info['id']))?>"> <i class="icon-user"></i> Profile</a></li>
                             <li><a href="<?php echo base_url('admin/accounts/edit/'.base64_encode($client_info['id']))?>"> <i class="icon-edit"></i> Edit profile</a></li>
+                            <li><a href="<?php echo base_url('admin/accounts/status/'.base64_encode($client_info['id']))?>"> <i class="icon-edit"></i>Account Status</a></li>
                         </ul>
 
                     </section>

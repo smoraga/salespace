@@ -23,7 +23,7 @@ class Accounts extends CI_Controller {
         $this->load->view('templates/admin/accounts/buyer_listing_view', $data);
     }
 	
-	public function add() {
+    public function add() {
          $this->load->model('address_model');
         
         $data['cities'] = $this->address_model->get_all_city();
@@ -110,6 +110,13 @@ class Accounts extends CI_Controller {
             $data['success'] = TRUE;
         }
         echo json_encode($data);
+    }
+    
+    public function status($id = NULL) {
+        $id = base64_decode($id);
+        $data['client_info'] = $this->accounts_model->get_client_full_info($id);
+        
+        $this->load->view('templates/admin/accounts/account_profile_status', $data);
     }
     
     public function delete_client_account()

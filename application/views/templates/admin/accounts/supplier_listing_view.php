@@ -34,7 +34,7 @@
                                 <td><?php echo $v['username']; ?></td>
                                 <td><?php echo $v['first_name'].' '.$v['middle_name'].' '.$v['last_name']; ?></td>
                                 <td>
-                                    <button class="btn btn-success btn-xs" id="<?php echo $id; ?>" title="View"><i class="icon-ok"></i></button>
+                                    <button class="btn btn-success btn-xs" id="<?php echo $id; ?>" title="View"><i class="icon-book"></i></button>
                                     <button class="btn btn-primary btn-xs" id="<?php echo $id; ?>" title="Edit"><i class="icon-pencil"></i></button>
                                     <button class="btn btn-danger btn-xs" id="<?php echo $id; ?>" title="Delete"><i class="icon-trash "></i></button>
                                 </td>
