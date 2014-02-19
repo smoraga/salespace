@@ -11,7 +11,7 @@ else:
     </div>
    
     <!--logo start-->
-    <a href="index.html" class="logo">Flat<span>lab</span></a>
+    <a href="index.html" class="logo">Sale<span>$pace</span></a>
     <!--logo end-->
     
     <div class="top-nav ">

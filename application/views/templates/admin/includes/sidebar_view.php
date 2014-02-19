@@ -12,7 +12,7 @@
                 <li class="sub-menu">
                     <a  href="login.html">
                         <i class="icon-user"></i>
-                        <span>Account</span>
+                        <span>Registration Management</span>
                     </a>
                     <ul class="sub">
                         <li><a href="<?php echo base_url('admin/accounts/supplier_listing')?>">Supplier</a></li>
@@ -23,7 +23,7 @@
                 <li>
                     <a href="<?php echo base_url('admin/configuration/')?>">
                         <i class="icon-cogs"></i>
-                        <span>Configuration</span>
+                        <span>Configuration Management</span>
                     </a>
                 </li>
                 <?php 
