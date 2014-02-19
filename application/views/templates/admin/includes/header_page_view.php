@@ -16,6 +16,7 @@ else:
     
     <div class="top-nav ">
         <!--search & user info start-->
+        <ul class="nav pull-right top-menu">
             <!-- user login dropdown start-->
             <li class="dropdown">
                 <?php $auth_user = $this->session->userdata('authenticated_user'); ?>
